@@ -17,7 +17,7 @@ const DogDetails = () => {
 
     return (
         <>
-            <p>BREED: {pet.breed}</p>
+            <h2>BREED: {pet.breed}</h2>
             <h1>PUPPIES</h1>
             <div>
                 {pet.images[1].puppies.map(image => (
