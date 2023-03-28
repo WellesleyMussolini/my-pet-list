@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/home/Home';
+import { Switch, Routes, Route } from 'react-router-dom';
+import * as Router from "./constants/routes";
+import NotFound from './components/not-found/NotFound';
+import Dogs from './pages/dogs/Dogs';
+import LoadingScreen from './components/loading-screen/LoadingScreen';
+import DogDetails from './pages/dog-details/DogDetails';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+            <Routes>
+                <Route exact path={Router.HOME} element={<Home />} />
+                <Route path={Router.DOGS} element={<Dogs />} />
+                <Route path={Router.DOG} element={<DogDetails />} />
+                <Route path={Router.NOT_FOUND} element={<NotFound />} />
+            </Routes>
+        </>
+    )
+};
 
 export default App;
