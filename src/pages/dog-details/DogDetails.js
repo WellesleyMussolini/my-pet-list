@@ -15,7 +15,6 @@ const DogDetails = () => {
         return <div>LOADING...</div>
     }
 
-
     return (
         <>
             <p>BREED: {pet.breed}</p>
@@ -36,37 +35,3 @@ const DogDetails = () => {
 };
 
 export default DogDetails;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const renderImages = () => {
-//     return pet.images.map((image) => {
-//         if (typeof image === "object") {
-//             return Object.keys(image).map((key) => {
-//                 return image[key].map((url) => {
-//                     return <img key={url} src={url} alt={pet.breed} />;
-//                 });
-//             });
-//         }
-//         else if (typeof image === "string") {
-//             return <img key={image} src={image} alt={pet.breed} />;
-//         }
-//         return null;
-//     });
-// };
