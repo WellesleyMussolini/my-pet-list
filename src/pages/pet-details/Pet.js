@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "./dog.module.css";
+import styles from "./pet.module.css";
 import Header from "../../components/header/Header";
-import { api } from "../../config/api";
+import { api } from "../../services/api";
 import { useParams } from 'react-router-dom';
 
-const DogDetails = () => {
+const Pet = () => {
     const { id } = useParams();
     const [pet, setPet] = useState(null);
     useEffect(() => {
@@ -34,4 +34,4 @@ const DogDetails = () => {
     );
 };
 
-export default DogDetails;
+export default Pet;

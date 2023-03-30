@@ -9,16 +9,18 @@
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 30px 0 30px;
+  padding: 0 30px;
   height: 80px;
   background: black;
   z-index: 10;
   width: 100%;
 }
 
-.menu{
-  justify-self: left;
+.menu {
+  display: flex;
+  align-items: center;
 }
 
 .menu svg {
@@ -26,9 +28,13 @@
   cursor: pointer;
 }
 
-.navigation{
-  display: flex;
-  justify-self: center;
+.navigation {
+  flex-grow: 1;
+}
+
+.navigation svg {
+  color: #fff;
+  cursor: pointer;
 }
 
 .navigation li {
@@ -75,6 +81,8 @@
   transition: 0.8s;
   width: 40px;
   justify-self: end;
+  position: absolute;
+  right: 30px;
 }
 
 .search input {
@@ -114,4 +122,10 @@
   border: none;
   outline: none;
   border-bottom: none;
+}
+
+@media only screen and (max-resolution: 400dpi) {
+  .navigation div {
+    margin: 0 30px;
+  }
 }

@@ -1,61 +1,35 @@
-.container {
-    height: calc(100vh - 80px);
+.container{
+    /* background-color: darkred; */
+    background: rgb(80, 5, 5);
+    height: 100vh;
 }
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.wrapper .error{
+.NotFound{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 10;
 
+    height: 70vh;
 }
 
-.wrapper h1 {
-    color: #fff;
-    font-size: 8em;
-    font-family: "Lato", sans-serif;
+.NotFound h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
     font-weight: bolder;
-}
-
-.wrapper h2 {
+    font-size: 50px;
     color: #fff;
-    font-size: 2em;
-    font-family: "Lato", sans-serif;
+}
+
+.NotFound h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
     font-weight: bolder;
+    margin-top: 15px;  
+    font-size: 25px;
+    color: #fff;
 }
 
-@media only screen and (max-resolution: 125dpi) {
-    .wrapper .error {
-        position: absolute;
-        top: 15%;
-    }
-
+.NotFound img{
+    width: 300px; 
+    height: 300px;
+    background: rgb(80, 5, 5);
 }
-
-@media only screen and (min-resolution: 125dpi) {
-    .wrapper .error {
-        position: relative;
-        top: 20px;
-    }
-}
-
-/* <div class="paper">
-<div class="face">
-  <div class="eyes">
-    <div class="eye eye-left"></div>
-    <div class="eye eye-right"></div>
-  </div>
-  <div class="rosyCheeks rosyCheeks-left"></div>
-  <div class="rosyCheeks rosyCheeks-right"></div>
-  <div class="mouth"></div>
-</div>
-</div>
-</div> */
