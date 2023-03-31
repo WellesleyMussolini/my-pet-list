@@ -4,9 +4,9 @@ import Tooltip from '@mui/material/Tooltip';
 
 const handleDragStart = (event) => event.preventDefault();
 
-const Card = ({ image, image_alt, id, name, handle_details }) => {
+const Card = ({ image, image_alt, id, name, handle_pet_details }) => {
     return (
-        <div className={styles.card} onClick={handle_details}>
+        <div className={styles.card} onClick={handle_pet_details}>
             <img
                 src={image} alt={image_alt}
                 onDragStart={handleDragStart}

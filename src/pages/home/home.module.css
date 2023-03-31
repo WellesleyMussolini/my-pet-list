@@ -30,3 +30,11 @@
     background: #edf0f2;
     height: calc(100vh - 80px);
 }
+
+/* .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 100px 0;
+    min-height: 700px;
+} */

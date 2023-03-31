@@ -124,8 +124,8 @@
   border-bottom: none;
 }
 
-@media only screen and (max-resolution: 400dpi) {
+/* @media only screen and (max-resolution: 400dpi) {
   .navigation div {
     margin: 0 30px;
   }
-}
+} */
