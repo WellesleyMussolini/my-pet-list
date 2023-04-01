@@ -1,5 +1,5 @@
 import { api } from "../api";
 
-export const petService = async (handlePets) => {
-    return await api.get("/").then((response) => handlePets(response.data)).catch((error) => console.log(error));
+export const petService = async (handlePets, route, data) => {
+    return await api.get(route).then((response) => handlePets(response[data])).catch((error) => console.log(error));
 };
