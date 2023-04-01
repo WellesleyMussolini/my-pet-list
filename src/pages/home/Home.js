@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./home.module.css";
 import { api } from "../../services/api";
 import Pet from "../../layout/pets/pet-loader/pet.loader";
@@ -9,9 +9,7 @@ const DEFAULT_CARD_COUNT = 5;
 const Dogs = () => {
     const [pets, setPets] = useState([]);
 
-    useEffect(() => {
-        petService(setPets);
-    }, []);
+    petService(setPets);
 
     return (
         <>
