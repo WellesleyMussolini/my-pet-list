@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./pet.module.css";
-import Pets from "../pet-list/pets";
+import Pets from "../pet-list/pet.list";
 import CardSkeleton from "../../../components/card-skeleton/CardSkeleton";
 
 const Pet = ({ array, card_amount }) => {

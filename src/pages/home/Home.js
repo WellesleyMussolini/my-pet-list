@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./home.module.css";
 import { api } from "../../services/api";
-import Pet from "../../layout/pets/pet-loader/pet";
+import Pet from "../../layout/pets/pet-loader/pet.loader";
+import { petService } from "../../services/pet-service";
 
 const DEFAULT_CARD_COUNT = 5;
 
@@ -9,9 +10,7 @@ const Dogs = () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        api.get("/")
-            .then((response) => setPets(response.data))
-            .catch((error) => console.log(error));
+        petService(setPets);
     }, []);
 
     return (
