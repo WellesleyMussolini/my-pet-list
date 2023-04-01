@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./home.module.css";
-import { api } from "../../services/api";
 import Pet from "../../layout/pets/pet-loader/pet.loader";
 import { petService } from "../../services/pet-service";
 
