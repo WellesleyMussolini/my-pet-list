@@ -3,16 +3,16 @@ import styles from "./pet.module.css";
 import Pets from "../pet-list/pet.list";
 import CardSkeleton from "../../../components/card-skeleton/CardSkeleton";
 
-const Pet = ({ array, card_amount }) => {
+const Pet = ({ pets, card_amount }) => {
     return (
         <div className={styles.wrapper}>
             {
-                array.length === 0 ? (
+                pets.length === 0 ? (
                     Array.from({ length: card_amount }).map((_, index) => (
                         <CardSkeleton key={index} />
                     ))
                 ) : (
-                    <Pets array={array} />
+                    <Pets array={pets} />
                 )}
         </div>
     );

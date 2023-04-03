@@ -12,16 +12,12 @@ const Dogs = () => {
         petService(setPets, "/", "data");
         return;
     }, []);
-    
+
     return (
         <div className={styles.wrapper}>
-            <Pet array={pets} card_amount={DEFAULT_CARD_COUNT} />
+            <Pet pets={pets} card_amount={DEFAULT_CARD_COUNT} />
         </div>
     );
 };
 
 export default Dogs;
-
-
-// const [search, setSearch] = useState("");
-{/* <Header handleSearch={(event) => setSearch(event.target.value)} /> */ }

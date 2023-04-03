@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Home from './pages/home/Home';
+import Home from '../pages/home/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import * as Router from "./constants/routes";
-import Pet from './pages/pet-details/Pet';
-import NotFound from './components/not-found/NotFound';
-import Header from './layout/header/Header';
+import * as Router from "../constants/routes";
+import Pet from '../pages/pet-details/Pet';
+import NotFound from '../components/not-found/NotFound';
+import Header from '../layout/header/Header';
 
 const Routers = () => {
     const [search, setSearch] = useState("");

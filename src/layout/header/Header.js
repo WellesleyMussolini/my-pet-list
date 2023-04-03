@@ -8,9 +8,9 @@ const Header = ({ handleSearch }) => {
 
     return (
         <header className={styles.header}>
-            <div className={styles.menu}>
-                <PetsIcon />
-            </div>
+            {/* <div className={styles.menu}> */}
+                {/* <PetsIcon /> */}
+            {/* </div> */}
             <ul className={styles.navigation}>
                 <li><a>My Pets</a></li>
                 <div className={styles.petPaw}>
