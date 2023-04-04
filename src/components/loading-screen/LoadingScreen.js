@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useEffect } from "react";
 import styles from "./loading.module.css";
 
@@ -6,53 +6,40 @@ const LoadingScreen = () => {
     const [eyelidD, setEyelidD] = useState(
         "M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z"
     );
-    const [rightEar, setRightEar] = useState(
-        "M69.42 78.07c-15.3-4.38-38.75-1.12-49.71 17.38 11.82 10.64 39.18 17.46 54 8.63a43.93 43.93 0 0 1-4.29-26.01z"
-    );
-
-    //  = EYELID =
-
     const [eyelidClass, setEyelidClass] = useState(styles.eyelid);
-    const [rightEarClass, setRightEarClass] = useState(styles.rightEar);
-
-    function blink() {
-        setTimeout(function () {
+    const blink = () => {
+        setTimeout(() => {
             setEyelidD("M85.89 68.876l24.72-16.19 17.96 27.423-24.72 16.188z");
             setEyelidClass((prevClass) => prevClass + " " + styles.blink);
             setTimeout(endBlink, 180);
         }, 3000);
     }
-
-    function endBlink() {
+    const endBlink = () => {
         setEyelidD("M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z");
         setEyelidClass(styles.eyelid);
         setTimeout(blink, 180);
     }
 
 
+    // Right ear
 
-
-
-    // RIGHT EAR
-
+    const [rightEarClass, setRightEarClass] = useState(styles.rightEar);
+    const rightEarRef = useRef(null);
 
     function twitchRightStart() {
         setTimeout(() => {
-            setRightEarClass(prevClass => `${prevClass} ${styles.twitch}`);
-            setRightEar('M69.42 78.07c-15.3-4.38-38.75-1.12-49.71 17.38 11.82 10.64 39.18 17.46 54 8.63a43.93 43.93 0 0 1-4.29-26.01z');
-            setTimeout(twitchRightEnd, 50);
+            setRightEarClass(`${styles.rightEar} ${styles.earTwitch}`);
+            setTimeout(twitchRightEnd, 120);
         }, 2500);
     }
 
     function twitchRightEnd() {
         setTimeout(() => {
-            setRightEarClass(styles.rightEar);
-            setRightEar('M69.42 78.07c-15.3-4.38-38.75-1.12-49.71 17.38 11.82 10.64 39.18 17.46 54 8.63a43.93 43.93 0 0 1-4.29-26.01z');
+            setRightEarClass(`${styles.rightEar} ${styles.earReturn}`);
+            rightEarRef.current.setAttribute('transform', 'rotate(0 66 93)');
             setTimeout(twitchRightStart, 300);
         }, 50);
     }
-
-
     useEffect(() => {
         blink();
         twitchRightStart();
@@ -83,9 +70,7 @@ const LoadingScreen = () => {
                             <stop offset="1" stopColor="#90a9af" />
                         </radialGradient>
                     </defs>
-                    <title>
-                        dog-incircle
-                    </title>
+                    <title>LOADING...</title>
                     <circle cx="100" cy="111.52" r="100" fill="url(#a)" />
                     <path
                         d="M125 199.08l-13.84-24.34 8.9-26.69-17 .91-39.27-30.15c-10.45 17.2-25.15 37.07-39.33 58.23a100.13 100.13 0 0 0 95.17 32.54l-6.13-16.86z"
@@ -99,9 +84,10 @@ const LoadingScreen = () => {
                     <path
                         d="M167.92 2.39A10.16 10.16 0 0 0 164 5.52a15 15 0 0 1 1.94-1A11.63 11.63 0 0 1 180 9.01a11.06 11.06 0 0 0-.47-1.72 9 9 0 0 0-11.61-4.9zM114.25 64.09a11.82 11.82 0 1 0 5.75 15.6 11.65 11.65 0 0 0-5.75-15.6zm5.38 10.61a6.46 6.46 0 0 1-8.57 3.13 6.35 6.35 0 0 1-3.06-8.49 6.46 6.46 0 0 1 8.57-3.13 6.35 6.35 0 0 1 3.06 8.49z"
                         fill="#fff" fillRule="evenodd" />
-                    <path className={styles.rightEar}
-                        // d="M69.42 78.07c-15.3-4.38-38.75-1.12-49.71 17.38 11.82 10.64 39.18 17.46 54 8.63a43.93 43.93 0 0 1-4.29-26.01z"
-                        d={rightEar}
+                    <path
+                        className={rightEarClass}
+                        ref={rightEarRef}
+                        d="M69.42 78.07c-15.3-4.38-38.75-1.12-49.71 17.38 11.82 10.64 39.18 17.46 54 8.63a43.93 43.93 0 0 1-4.29-26.01z"
                         fill="#010101" fillRule="evenodd" />
                     <path fill="#8cbd44" fillRule="evenodd"
                         d="M123.36 143.82l-66.62-22.91-5.14 16.33 68.33 24.02 3.43-17.44" />
@@ -113,34 +99,3 @@ const LoadingScreen = () => {
 };
 
 export default LoadingScreen;
-
-
-
-
-
-// EYELID
-{/* <svg id="scottie-loader" className={styles.loaderDog} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.95 211.52">
-<path className={styles.eyelid} fill="#010101" d={eyelidD} />
-</svg>  */}
-// function blink() {
-//     setTimeout(function () {
-//         setEyelidD("M85.89 68.876l24.72-16.19 17.96 27.423-24.72 16.188z");
-//         setEyelidClass(styles.eyelid + " " + styles.blink);
-//         setTimeout(endBlink, 500); 
-//     }, 3000);
-// }
-
-// function endBlink() {
-//     setEyelidD("M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z");
-//     setEyelidClass(styles.eyelid);
-//     setTimeout(blink, 500); 
-// }
-
-
-
-// RIGHT EAR
-{/* <svg id="scottie-loader" className={styles.loaderDog} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.95 211.52">
-    <path className={styles.rightEar}
-        d={rightEar}
-        fill="#010101" fillRule="evenodd" />
-</svg>  */}
