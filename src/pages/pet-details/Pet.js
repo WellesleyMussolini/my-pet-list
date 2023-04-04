@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react";
 import styles from "./pet.module.css";
 import { api } from "../../services/api";
 import { useParams } from 'react-router-dom';
+import LoadingScreen from "../../components/loading-screen/LoadingScreen";
+import { petService } from "../../services/pet-service";
 
 const Pet = () => {
     const { id } = useParams();
     const [pet, setPet] = useState(null);
+    
     useEffect(() => {
-        api.get("/" + id).then((response) => setPet(response.data)).catch((error) => console.log(error));
+        petService(setPet, "/" + id, "data");
+        return;
     }, [id]);
 
     if (!pet) {
-        return <div>LOADING...</div>
+        return <LoadingScreen />
     }
 
     return (
