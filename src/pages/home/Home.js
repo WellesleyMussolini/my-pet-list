@@ -9,7 +9,7 @@ const Dogs = () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        petService(setPets, "/", "data");
+        // petService(setPets, "/", "data");
         return;
     }, []);
 

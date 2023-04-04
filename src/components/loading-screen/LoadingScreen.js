@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useEffect } from "react";
-import styles from "./loading.module.css";
+import styles from "./loading.screen.module.css";
 
-const LoadingScreen = () => {
+const DogLoader = () => {
     const [eyelidD, setEyelidD] = useState(
         "M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z"
     );
@@ -26,20 +26,23 @@ const LoadingScreen = () => {
     const [rightEarClass, setRightEarClass] = useState(styles.rightEar);
     const rightEarRef = useRef(null);
 
-    function twitchRightStart() {
+    const twitchRightStart = () => {
         setTimeout(() => {
             setRightEarClass(`${styles.rightEar} ${styles.earTwitch}`);
             setTimeout(twitchRightEnd, 120);
         }, 2500);
     }
 
-    function twitchRightEnd() {
+    const twitchRightEnd = () => {
         setTimeout(() => {
             setRightEarClass(`${styles.rightEar} ${styles.earReturn}`);
-            rightEarRef.current.setAttribute('transform', 'rotate(0 66 93)');
+            if (rightEarRef.current) {
+                rightEarRef.current.setAttribute('transform', 'rotate(0 66 93)');
+            }
             setTimeout(twitchRightStart, 300);
         }, 50);
     }
+
     useEffect(() => {
         blink();
         twitchRightStart();
@@ -98,4 +101,4 @@ const LoadingScreen = () => {
     );
 };
 
-export default LoadingScreen;
+export default DogLoader;
