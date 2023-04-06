@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Home from '../pages/home/Home';
+import Home from '../pages/home/home/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import * as Router from "../constants/routes";
 import Pet from '../pages/pet-details/Pet';

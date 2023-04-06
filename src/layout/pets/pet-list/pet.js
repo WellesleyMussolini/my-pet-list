@@ -3,7 +3,7 @@ import Card from "../../../components/card/Card";
 import { usePetNavigate } from "../pet-navigate/pet.navigate";
 import { Container } from "./pet.styled";
 
-const Pets = ({ pets }) => {
+const PetList = ({ pets }) => {
     const handleGetPetId = usePetNavigate();
     return (
         <Container>
@@ -24,4 +24,4 @@ const Pets = ({ pets }) => {
     );
 };
 
-export default Pets;
+export default PetList;
