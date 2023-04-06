@@ -3,7 +3,7 @@ import { navigate } from "../mock/nav.mock";
 import { Navigate } from "../nav-list/nav.list";
 import { Container, Navigation } from "./header.styles";
 
-const Header = ({ handleSearch }) => {
+const Header = () => {
     return (
         <Container>
             <Navigation>

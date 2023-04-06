@@ -12,7 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         pet.get(setPets, "/pets", "data").finally(() => {
-            setIsLoading(false);
+            return setIsLoading(false);
         });
     }, []);
 

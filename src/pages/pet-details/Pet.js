@@ -6,9 +6,9 @@ import { pet } from "../../services/pet-service";
 const Pet = () => {
     const { id } = useParams();
     const [dog, setDog] = useState(null);
-    
+
     useEffect(() => {
-        pet.get(setDog, "/pets/" + id, "data");
+        pet.get(setDog, `/pets/${id}`, "data");
         return;
     }, [id]);
 

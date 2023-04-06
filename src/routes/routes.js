@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Home from '../pages/home/home/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import * as Router from "../constants/routes";
@@ -7,19 +7,18 @@ import NotFound from '../components/not-found/NotFound';
 import Header from '../layout/header/header/Header';
 
 const Routers = () => {
-    const [search, setSearch] = useState("");
     return (
         <BrowserRouter>
             <Routes>
                 <Route exact path={Router.HOME} element={
                     <>
-                        <Header handleSearch={(event) => setSearch(event.target.value)} />
+                        <Header />
                         <Home />
                     </>
                 } />
                 <Route path={Router.PET} element={
                     <>
-                        <Header handleSearch={(event) => setSearch(event.target.value)} />
+                        <Header />
                         <Pet />
                     </>
                 } />
