@@ -1,5 +1,4 @@
 .header,
-.menu,
 .navigation,
 .search {
   display: flex;
@@ -16,11 +15,6 @@
   background: black;
   z-index: 10;
   width: 100%;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
 }
 
 .menu svg {
@@ -123,9 +117,3 @@
   outline: none;
   border-bottom: none;
 }
-
-/* @media only screen and (max-resolution: 400dpi) {
-  .navigation div {
-    margin: 0 30px;
-  }
-} */

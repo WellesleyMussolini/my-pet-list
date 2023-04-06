@@ -2,22 +2,16 @@ import React from "react";
 import styles from "./header.module.css";
 import SearchIcon from '@mui/icons-material/Search';
 import { Input } from "@mui/material";
-import PetsIcon from '@mui/icons-material/Pets';
+import { navigate } from "../mock/nav.mock";
+import { Navigate } from "../nav-list/nav.list";
 
 const Header = ({ handleSearch }) => {
-
     return (
         <header className={styles.header}>
-            {/* <div className={styles.menu}> */}
-                {/* <PetsIcon /> */}
-            {/* </div> */}
             <ul className={styles.navigation}>
-                <li><a>My Pets</a></li>
-                <div className={styles.petPaw}>
-                    <a><PetsIcon /></a>
-                </div>
-                <li><a>Pets</a></li>
+                <Navigate navList={navigate} property="item" />
             </ul>
+
             <div className={styles.search}>
                 <Input
                     type="text"
@@ -31,3 +25,8 @@ const Header = ({ handleSearch }) => {
 };
 
 export default Header;
+
+
+{/* jogar dentro de um array e fazer um map */ }
+{/* utilizar o styled components  */ }
+{/* npm install @mui/material @mui/styled-engine-sc styled-components */ }

@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from "react";
-import styles from "./pet.module.css";
-import { api } from "../../services/api";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../components/loading-screen/LoadingScreen";
-import { petService } from "../../services/pet-service";
+import { pet } from "../../services/pet-service";
 
 const Pet = () => {
     const { id } = useParams();
-    const [pet, setPet] = useState(null);
+    const [dog, setDog] = useState(null);
     
     useEffect(() => {
-        petService(setPet, "/" + id, "data");
+        pet.get(setDog, "/pets/" + id, "data");
         return;
     }, [id]);
 
-    if (!pet) {
+    if (!dog) {
         return <LoadingScreen />
     }
 
     return (
         <>
-            <h2>BREED: {pet.breed}</h2>
+            <h2>BREED: {dog.breed}</h2>
             <h1>PUPPIES</h1>
             <div>
-                {pet.images[1].puppies.map((image, index) => (
+                {dog.images[1].puppies.map((image, index) => (
                     <img src={image} alt="puppy" key={index} />
                 ))}
             </div>
             <h1>ADULT HOOD</h1>
             <div>
-                {pet.images.map((image, index) => (
+                {dog.images.map((image, index) => (
                     <img src={image} alt="ADULT" key={index} />
                 ))}
             </div>
