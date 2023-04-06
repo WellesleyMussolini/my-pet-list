@@ -1,13 +1,14 @@
 import React from "react";
 import Card from "../../../components/card/Card";
 import { usePetNavigate } from "../pet-navigate/pet.navigate";
+import { Container } from "./pet.styled";
 
-const Pets = ({ array }) => {
+const Pets = ({ pets }) => {
     const handleGetPetId = usePetNavigate();
     return (
-        <>
+        <Container>
             {
-                array.map((pet, index) => {
+                pets.map((pet, index) => {
                     return (
                         <Card
                             key={index}
@@ -19,7 +20,7 @@ const Pets = ({ array }) => {
                         />
                     );
                 })}
-        </>
+        </Container>
     );
 };
 

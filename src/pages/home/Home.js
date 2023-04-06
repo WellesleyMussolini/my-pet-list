@@ -1,31 +1,50 @@
-import React, { useState, useEffect } from "react";
-import styles from "./home.module.css";
-import Pet from "../../layout/pets/pet-loader/pet.loader";
+import React, { useState, useEffect, useMemo } from "react";
 import { pet } from "../../services/pet-service";
 import Input from "../../components/input-search/Input";
+import { Container, Wrapper, LoadingCardScreen } from "./home.styles";
+import { pet_filter } from "../../utils/pet.filter";
+import LoadingScreen from "../../components/loading-screen/LoadingScreen";
+import CardSkeleton from "../../components/card-skeleton/CardSkeleton";
+import Pets from "../../layout/pets/pet-list/pet";
 
-const DEFAULT_CARD_COUNT = 5; // alterar 
+const DEFAULT_CARD_COUNT = 5;
 
-const Dogs = () => {
+const Home = () => {
+    const [search, setSearch] = useState("");
     const [pets, setPets] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        pet.get(setPets, "/pets", "data");
-        return;
+        pet.get(setPets, "/pets", "data").finally(() => {
+            setIsLoading(false);
+        });
+    }, []);
+
+    const petsFilter = useMemo(() => {
+        return pet_filter(pets, search, "breed");
+    }, [pets, search]);
+
+    const petSkeleton = useMemo(() => {
+        return Array.from({ length: DEFAULT_CARD_COUNT }).map((_, index) => (
+            <CardSkeleton key={index} />
+        ));
     }, []);
 
     return (
-        // <div className={styles.wrapper}>
-        //     <Input />
-        //     <Pet pets={pets} card_amount={DEFAULT_CARD_COUNT} />
-        // </div>
-        <div className={styles.container}>
-            <Input />
-            <div className={styles.wrapper}>
-                <Pet pets={pets} card_amount={DEFAULT_CARD_COUNT} />
-            </div>
-        </div>
+        <Container>
+            <Input handleSearch={(event) => setSearch(event.target.value)} />
+            <Wrapper>
+                {isLoading ? (
+                    <LoadingCardScreen>
+                        <LoadingScreen />
+                        {petSkeleton}
+                    </LoadingCardScreen>
+                ) : (
+                    <Pets pets={petsFilter} />
+                )}
+            </Wrapper>
+        </Container>
     );
 };
 
-export default Dogs;
+export default Home;
