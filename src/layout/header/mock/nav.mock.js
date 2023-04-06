@@ -3,13 +3,13 @@ import PetsIcon from '@mui/icons-material/Pets';
 
 export const navigate = [
     {
-        item: "My Pets",
+        label: "My Pets",
     },
+    // {
+        // label: <PetsIcon />,
+        // route: "/"
+    // },
     {
-        item: <PetsIcon />,
-        route: "/"
-    },
-    {
-        item: "Pets"
+        label: "Pets"
     },
 ]
