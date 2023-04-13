@@ -12,29 +12,28 @@ const queryClient = new QueryClient()
 const Routers = () => {
     return (
         <BrowserRouter>
-
-            <Routes>
-                <Route exact path={Router.HOME} element={
-                    <>
-                        <Header />
-                        <QueryClientProvider client={queryClient}>
+            <QueryClientProvider client={queryClient}>
+                <Routes>
+                    <Route exact path={Router.HOME} element={
+                        <>
+                            <Header />
                             <Home />
-                        </QueryClientProvider>
-                    </>
-                } />
-                <Route path={Router.PET} element={
-                    <>
-                        <Header />
-                        <Pet />
-                    </>
-                } />
-                <Route path={Router.NOT_FOUND} element={
-                    <>
-                        <Header />
-                        <NotFound />
-                    </>
-                } />
-            </Routes>
+                        </>
+                    } />
+                    <Route path={Router.PET} element={
+                        <>
+                            <Header />
+                            <Pet />
+                        </>
+                    } />
+                    <Route path={Router.NOT_FOUND} element={
+                        <>
+                            <Header />
+                            <NotFound />
+                        </>
+                    } />
+                </Routes>
+            </QueryClientProvider>
         </BrowserRouter>
     );
 };
