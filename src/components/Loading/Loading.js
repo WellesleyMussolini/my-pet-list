@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useEffect } from "react";
 import styles from "./loading.screen.module.css";
 
-const LoadingScreen = () => {
+const Loading = () => {
     const [eyelidD, setEyelidD] = useState(
         "M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z"
     );
@@ -101,4 +101,4 @@ const LoadingScreen = () => {
     );
 };
 
-export default LoadingScreen;
+export default Loading;

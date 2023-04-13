@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import LoadingScreen from "../../components/loading-screen/LoadingScreen";
+import LoadingScreen from "../../components/Loading/Loading";
 import { pet } from "../../services/pet-service";
 
 const Pet = () => {
