@@ -1,22 +1,22 @@
 import React from "react";
-import styles from "./card.module.css";
+import { Wrapper, Image, Id, Breed } from "./card.styles";
 import Tooltip from '@mui/material/Tooltip';
 
 const handleDragStart = (event) => event.preventDefault();
 
 const Card = ({ image, image_alt, id, name, handle_pet_details }) => {
     return (
-        <div className={styles.card} onClick={handle_pet_details}>
-            <img
+        <Wrapper onClick={handle_pet_details}>
+            <Image
                 src={image} alt={image_alt}
                 onDragStart={handleDragStart}
                 draggable={false}
             />
-            <p><span>#</span>{id}</p>
+            <Id><span>#</span>{id}</Id>
             <Tooltip title={name}>
-                <h5>{name}</h5>
+                <Breed>{name}</Breed>
             </Tooltip>
-        </div>
+        </Wrapper>
     );
 };
 
