@@ -18,23 +18,12 @@ const Home = () => {
     }, [pets, search]);
 
     if (!isLoading) {
-        return <Error error="Pets not found" />;
+        return <Error error="PETS NOT FOUND" />;
     }
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
             <Pets pets={petsFilter} Loader={isLoading} />
-            {/* <Test>
-                <li>
-                    <Card class="card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/20110425_German_Shepherd_Dog_8505.jpg" alt="Imagem do card" />
-                            <h2>Título do card</h2>
-                            <p>Descrição do card.</p>
-                            <a href="#">Botão</a>
-                    </Card>
-                </li>
-            </Test>  */}
-
         </Container>
     );
 };
