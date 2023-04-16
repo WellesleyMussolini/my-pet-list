@@ -8,7 +8,7 @@ export const Card = styled.div`
     align-items: center;
     flex-direction: column;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1px 0px 5px 4px;
+    box-shadow: rgba(0, 0, 0, 0.075) 1px 0px 5px 4px;
     padding: 10px;
     cursor: pointer;
 `;
