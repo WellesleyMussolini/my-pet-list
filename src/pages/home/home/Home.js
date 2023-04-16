@@ -17,13 +17,14 @@ const Home = () => {
         return pet_filter(pets, search, "breed");
     }, [pets, search]);
 
-    if (!isLoading) {
+    if (!isLoading && pets.length === 0) {
         return <Error error="PETS NOT FOUND" />;
     }
+
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
-            <Pets pets={petsFilter} Loader={isLoading} />
+            <Pets pets={petsFilter} Loader={!isLoading} />
         </Container>
     );
 };

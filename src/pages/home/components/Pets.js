@@ -11,7 +11,7 @@ const Pets = ({ pets, Loader }) => {
     const petSkeleton = cardSkeleton(CardSkeleton, card_amount);
     return (
         <Wrapper>
-            {Loader ? (
+            {!Loader ? (
                 <LoadingCardScreen>
                     <Loading />
                     {petSkeleton}

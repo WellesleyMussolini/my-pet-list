@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     align-items: center;
     flex-direction: column;
     border-radius: 4px;
-    /* box-shadow: rgba(0, 0, 0, 0.45) 1px 0px 5px 4px; */
+    box-shadow: rgba(0, 0, 0, 0.45) 1px 0px 5px 4px;
     gap: 5px;
     padding: 10px;
     background: #fff;
@@ -51,5 +51,4 @@ export const Id = styled.p`
     color: rgb(171, 171, 171);
     font-size: 12px;
     cursor: auto;
-    background: red;
 `;

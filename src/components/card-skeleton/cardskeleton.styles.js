@@ -8,9 +8,8 @@ export const Card = styled.div`
     align-items: center;
     flex-direction: column;
     border-radius: 4px;
-    /* box-shadow: rgba(0, 0, 0, 0.45) 1px 0px 5px 4px; */
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1px 0px 5px 4px; */
     padding: 10px;
-    opacity: 0.3;
     cursor: pointer;
 `;
 
@@ -23,6 +22,12 @@ export const Skeleton = keyframes`
     }
 `;
 
+const load = keyframes`
+    100% {
+        background-position: -100% 0;
+    }
+`;
+
 export const SkeletonElement = styled.div`
     opacity: 0.7;
     animation: ${Skeleton} 1s linear infinite alternate;
@@ -32,6 +37,19 @@ export const Image = styled(SkeletonElement)`
     width: 100%;
     height: 239.2px;
     margin-bottom: 0.5rem;
+
+    &.skeleton-element {
+        background: linear-gradient(
+            120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        animation: ${load} 2s infinite;
+    }
 `;
 
 export const Id = styled(SkeletonElement)`
@@ -39,6 +57,19 @@ export const Id = styled(SkeletonElement)`
     width: 70%;
     height: 12px;
     margin-bottom: 0.25rem;
+
+    &.skeleton-element {
+        background: linear-gradient(
+            120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        animation: ${load} 2s infinite;
+    }
 `;
 
 export const Name = styled(SkeletonElement)`
@@ -46,4 +77,17 @@ export const Name = styled(SkeletonElement)`
     height: 25px;
     margin-top: .45rem;
     margin-bottom: .25rem;
+
+    &.skeleton-element {
+        background: linear-gradient(
+            120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        animation: ${load} 2s infinite;
+    }
 `;

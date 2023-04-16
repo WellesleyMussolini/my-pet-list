@@ -6,7 +6,7 @@ const handleDragStart = (event) => event.preventDefault();
 
 const Card = ({ image, image_alt, id, name, handle_pet_details }) => {
     return (
-        <Wrapper onClick={handle_pet_details}>
+        <Wrapper onClick={handle_pet_details} className="light-beam">
             <Image
                 src={image} alt={image_alt}
                 onDragStart={handleDragStart}
