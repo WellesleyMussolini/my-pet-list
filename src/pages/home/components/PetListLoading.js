@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper, LoadingCardScreen } from "../home/home.styles";
+import { Wrapper, LoadingCardScreen } from "../home/home.stylessssss";
 import Loading from "../../../components/Loading/Loading";
 import { cardSkeleton } from "../utils/card-skeleton";
 import PetList from "../../../layout/pets/pet-list/pet";

@@ -2,9 +2,9 @@ import React, { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { pet } from "../../../services/pet-service";
 import Input from "../../../components/input-search/Input";
-import { Container, Test, Card } from "../home/home.styles";
+import { Container } from "./home.styles";
 import { pet_filter } from "../../../utils/pet.filter";
-import Pets from "../components/Pets";
+import Pets from "../components/PetListLoading";
 import Error from "../../../components/error/Error";
 
 const Home = () => {
