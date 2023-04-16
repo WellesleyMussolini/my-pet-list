@@ -4,7 +4,7 @@ import { pet } from "../../../services/pet-service";
 import Input from "../../../components/input-search/Input";
 import { Container } from "./home.styles";
 import { pet_filter } from "../../../utils/pet.filter";
-import Pets from "../components/pet-loading/Pets";
+import Pets from "../pet-loading/Pets";
 import Error from "../../../components/error/Error";
 
 const Home = () => {
