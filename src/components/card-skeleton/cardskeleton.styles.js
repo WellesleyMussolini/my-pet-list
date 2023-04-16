@@ -29,7 +29,7 @@ const load = keyframes`
 `;
 
 export const SkeletonElement = styled.div`
-    opacity: 0.7;
+    opacity: 1;
     animation: ${Skeleton} 1s linear infinite alternate;
 `;
 
