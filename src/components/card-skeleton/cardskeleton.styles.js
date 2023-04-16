@@ -8,7 +8,7 @@ export const Card = styled.div`
     align-items: center;
     flex-direction: column;
     border-radius: 4px;
-    /* box-shadow: rgba(0, 0, 0, 0.15) 1px 0px 5px 4px; */
+    box-shadow: rgba(0, 0, 0, 0.15) 1px 0px 5px 4px;
     padding: 10px;
     cursor: pointer;
 `;
@@ -38,7 +38,7 @@ export const Image = styled(SkeletonElement)`
     height: 239.2px;
     margin-bottom: 0.5rem;
 
-    &.skeleton-element {
+    &.light-beam {
         background: linear-gradient(
             120deg,
             #e5e5e5 30%,
@@ -58,7 +58,7 @@ export const Id = styled(SkeletonElement)`
     height: 12px;
     margin-bottom: 0.25rem;
 
-    &.skeleton-element {
+    &.light-beam {
         background: linear-gradient(
             120deg,
             #e5e5e5 30%,
@@ -78,7 +78,7 @@ export const Name = styled(SkeletonElement)`
     margin-top: .45rem;
     margin-bottom: .25rem;
 
-    &.skeleton-element {
+    &.light-beam {
         background: linear-gradient(
             120deg,
             #e5e5e5 30%,

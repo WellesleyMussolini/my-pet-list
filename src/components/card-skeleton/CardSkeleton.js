@@ -4,9 +4,9 @@ import { Card, Id, Image, Name } from "./cardskeleton.styles";
 const CardSkeleton = () => {
     return (
         <Card>
-            <Image className="skeleton-element" />
-            <Id  className="skeleton-element" />
-            <Name className="skeleton-element" />
+            <Image className="light-beam" />
+            <Id className="light-beam" />
+            <Name className="light-beam" />
         </Card>
     );
 };
