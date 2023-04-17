@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../components/Loading/Loading";
 import { pet } from "../../services/pet-service";
+import PetsIcon from '@mui/icons-material/Pets';
+
 
 const Pet = () => {
     const { id } = useParams();
@@ -15,6 +17,13 @@ const Pet = () => {
     if (!dog) {
         return <LoadingScreen />
     }
+
+    const traits = [
+        { name: 'Inteligência', value: 5 },
+        { name: 'Agilidade', value: 4 },
+        { name: 'Força', value: 4 },
+        { name: 'Agressividade', value: 2 },
+    ];
 
     return (
         <>
@@ -31,8 +40,55 @@ const Pet = () => {
                     <img src={image} alt="ADULT" key={index} />
                 ))}
             </div>
+            <div>
+                {traits.map((trait, index) => (
+                    <div key={index}>
+                        <strong>{trait.name}</strong>
+                        {[...Array(5)].map((_, index) => (
+                            <PetsIcon
+                                key={index}
+                                color={index < trait.value ? 'primary' : 'disabled'}
+                            />
+                        ))}
+                    </div>
+                ))}
+            </div>
         </>
     );
 };
 
 export default Pet;
+
+
+
+/*
+import PetsIcon from '@mui/icons-material/Pets';
+
+
+const Pet = () => {
+    const traits = [
+        { name: 'Inteligência', value: 5 },
+        { name: 'Agilidade', value: 4 },
+        { name: 'Força', value: 4 },
+        { name: 'Agressividade', value: 2 },
+    ];
+     return (
+            <div>
+                <h2>Border Collie</h2>
+                {traits.map((trait, index) => (
+                    <div key={index}>
+                        <strong>{trait.name}:</strong>
+                        {[...Array(5)].map((_, i) => (
+                            <PetsIcon
+                                key={i}
+                                color={i < trait.value ? 'primary' : 'disabled'}
+                            />
+                        ))}
+                    </div>
+                ))}
+            </div>
+                );
+};
+
+export default Pet;
+*/
