@@ -9,6 +9,7 @@ import Dog from "../img/dog.png";
 import Scale from "../img/weighing-machine.png";
 import Heart from "../img/heart-attack.png";
 import { Container, BreedVitalStats, Stats, Image, Typography } from "./pet.styles";
+import { petStat } from "../mock/pet.mock";
 
 const Pet = () => {
     const { id } = useParams();
@@ -32,25 +33,18 @@ const Pet = () => {
 
     return (
         <Container>
-                <BreedVitalStats>
-                    <Stats>
-                        <Image src={Dog} alt="life span" />
-                        <Typography>Dog Breed Group:</Typography>
-                    </Stats>
-                    <Stats>
-                        <Image src={Bone} alt="life span" />
-                        <Typography>Height:</Typography>
-                    </Stats>
-                    <Stats>
-                        <Image src={Scale} alt="life span" />
-                        <Typography>Weight:</Typography>
-                    </Stats>
-                    <Stats>
-                        <Image src={Heart} alt="life span" />
-                        <Typography>Life Span:</Typography>
-                    </Stats>
-                </BreedVitalStats>
-                {/* 
+
+            <BreedVitalStats>
+                {petStat.map((pet, index) => {
+                    return (
+                        <Stats key={index}>
+                            <Image src={pet.icon} alt={pet.stat} />
+                            <Typography>{pet.stat}</Typography>
+                        </Stats>
+                    )
+                })}
+            </BreedVitalStats>
+            {/* 
                 <h2>BREED: {dog.breed}</h2>
                 <h1>PUPPIES</h1>
                 <div>
@@ -65,6 +59,7 @@ const Pet = () => {
                         <img src={image} alt="ADULT" key={index} />
                     ))}
                 </div>
+                */}
                 <div>
                     {traits.map((trait, index) => (
                         <div key={index}>
@@ -77,7 +72,7 @@ const Pet = () => {
                             ))}
                         </div>
                     ))}
-                </div> */}
+                </div> 
         </Container>
     );
 };
