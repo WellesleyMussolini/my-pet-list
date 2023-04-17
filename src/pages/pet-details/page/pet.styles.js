@@ -25,6 +25,7 @@ export const BreedVitalStats = styled.div`
     height: 12em;
     gap: 100px;
     background: #fff;
+    border-radius: 12px;
 `;
 
 export const Stats = styled.div`
