@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import LoadingScreen from "../../components/Loading/Loading";
-import { pet } from "../../services/pet-service";
+import LoadingScreen from "../../../components/Loading/Loading";
+import { pet } from "../../../services/pet-service";
 import PetsIcon from '@mui/icons-material/Pets';
-import HeartIcon from "../../assets/img/heart.png";
+import HeartIcon from "../img/heart.png";
+import { Container, BreedVitalStats, LifeSpan, Image, Typography } from "./pet.styles";
 
 const Pet = () => {
     const { id } = useParams();
@@ -26,10 +27,13 @@ const Pet = () => {
     ];
 
     return (
-        <>
-            <div>
-                <img src={HeartIcon} />
-            </div>
+        <Container>
+            <BreedVitalStats>
+                <LifeSpan>
+                    <Image src={HeartIcon} alt="life span" />
+                    <Typography>Life Span:</Typography>
+                </LifeSpan>
+            </BreedVitalStats>
             <h2>BREED: {dog.breed}</h2>
             <h1>PUPPIES</h1>
             <div>
@@ -56,7 +60,7 @@ const Pet = () => {
                     </div>
                 ))}
             </div>
-        </>
+        </Container>
     );
 };
 
