@@ -9,7 +9,7 @@ export const petStat = [
         icon: Dog,
     },
     {
-        stat: "Bone",
+        stat: "Height",
         icon: Bone,
     },
     {
