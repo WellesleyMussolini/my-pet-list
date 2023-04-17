@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: calc(100vh - 80px); 
+    background: #f4f4f4;
 `;
 
 export const Wrapper = styled.div`
+    position: absolute;
+    top: 15em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: red;
 `;
 
 export const BreedVitalStats = styled.div`
@@ -22,9 +25,9 @@ export const BreedVitalStats = styled.div`
     align-items: center;
     flex-direction: row;
     width: 45em;
-    height: 15em;
-    border: 1px solid black;
+    height: 12em;
     gap: 100px;
+    background: #fff;
 `;
 
 export const Stats = styled.div`
@@ -32,11 +35,11 @@ export const Stats = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
 `;
 
 export const Image = styled.img`
-    width: 65px;
+    width: 55px;
     margin-bottom: 10px;
 `;
 

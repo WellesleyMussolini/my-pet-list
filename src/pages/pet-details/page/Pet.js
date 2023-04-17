@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
 import PetsIcon from '@mui/icons-material/Pets';
-import HeartIcon from "../img/heart.png";
-import Bone from "../img/bone.png";
-import Dog from "../img/dog.png";
-import Scale from "../img/weighing-machine.png";
-import Heart from "../img/heart-attack.png";
-import { Container, BreedVitalStats, Stats, Image, Typography } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 
 const Pet = () => {
@@ -31,21 +26,22 @@ const Pet = () => {
         { name: 'Agressividade', value: 2 },
     ];
 
+    console.log(dog.breed_group)
     return (
         <Container>
-
-            <BreedVitalStats>
-                {petStat.map((pet, index) => {
-                    return (
-                        <Stats key={index}>
-                            <Image src={pet.icon} alt={pet.stat} />
-                            <Typography>{pet.stat}</Typography>
-                        </Stats>
-                    )
-                })}
-            </BreedVitalStats>
-            {/* 
+            <Wrapper>
                 <h2>BREED: {dog.breed}</h2>
+                <BreedVitalStats>
+                    {petStat.map((pet, index) => {
+                        return (
+                            <Stats key={index}>
+                                <Image src={pet.icon} alt={pet.stat} />
+                                <Typography>{pet.stat}</Typography>
+                            </Stats>
+                        )
+                    })}
+                </BreedVitalStats>
+                {/* 
                 <h1>PUPPIES</h1>
                 <div>
                     {dog.images[1].puppies.map((image, index) => (
@@ -72,7 +68,8 @@ const Pet = () => {
                             ))}
                         </div>
                     ))}
-                </div> 
+                </div>
+            </Wrapper>
         </Container>
     );
 };
