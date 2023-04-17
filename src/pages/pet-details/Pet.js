@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../components/Loading/Loading";
 import { pet } from "../../services/pet-service";
 import PetsIcon from '@mui/icons-material/Pets';
-
+import HeartIcon from "../../assets/img/heart.png";
 
 const Pet = () => {
     const { id } = useParams();
@@ -27,6 +27,9 @@ const Pet = () => {
 
     return (
         <>
+            <div>
+                <img src={HeartIcon} />
+            </div>
             <h2>BREED: {dog.breed}</h2>
             <h1>PUPPIES</h1>
             <div>
