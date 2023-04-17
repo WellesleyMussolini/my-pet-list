@@ -1,18 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 80px); 
+    min-height: calc(100vh - 80px); 
     background: #f4f4f4;
 `;
 
 export const Wrapper = styled.div`
-    position: absolute;
-    top: 15em;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -18,15 +18,7 @@ const Pet = () => {
     if (!dog) {
         return <LoadingScreen />
     }
-
-    const traits = [
-        { name: 'Inteligência', value: 5 },
-        { name: 'Agilidade', value: 4 },
-        { name: 'Força', value: 4 },
-        { name: 'Agressividade', value: 2 },
-    ];
-
-    console.log(dog.breed_group)
+    console.log(dog)
     return (
         <Container>
             <Wrapper>
@@ -56,19 +48,6 @@ const Pet = () => {
                     ))}
                 </div>
                 */}
-                <div>
-                    {traits.map((trait, index) => (
-                        <div key={index}>
-                            <strong>{trait.name}</strong>
-                            {[...Array(5)].map((_, index) => (
-                                <PetsIcon
-                                    key={index}
-                                    color={index < trait.value ? 'primary' : 'disabled'}
-                                />
-                            ))}
-                        </div>
-                    ))}
-                </div>
             </Wrapper>
         </Container>
     );
