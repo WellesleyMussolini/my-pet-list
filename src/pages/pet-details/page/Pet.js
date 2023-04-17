@@ -4,7 +4,11 @@ import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
 import PetsIcon from '@mui/icons-material/Pets';
 import HeartIcon from "../img/heart.png";
-import { Container, BreedVitalStats, LifeSpan, Image, Typography } from "./pet.styles";
+import Bone from "../img/bone.png";
+import Dog from "../img/dog.png";
+import Scale from "../img/weighing-machine.png";
+import Heart from "../img/heart-attack.png";
+import { Container, BreedVitalStats, Stats, Image, Typography } from "./pet.styles";
 
 const Pet = () => {
     const { id } = useParams();
@@ -28,38 +32,52 @@ const Pet = () => {
 
     return (
         <Container>
-            <BreedVitalStats>
-                <LifeSpan>
-                    <Image src={HeartIcon} alt="life span" />
-                    <Typography>Life Span:</Typography>
-                </LifeSpan>
-            </BreedVitalStats>
-            <h2>BREED: {dog.breed}</h2>
-            <h1>PUPPIES</h1>
-            <div>
-                {dog.images[1].puppies.map((image, index) => (
-                    <img src={image} alt="puppy" key={index} />
-                ))}
-            </div>
-            <h1>ADULT HOOD</h1>
-            <div>
-                {dog.images.map((image, index) => (
-                    <img src={image} alt="ADULT" key={index} />
-                ))}
-            </div>
-            <div>
-                {traits.map((trait, index) => (
-                    <div key={index}>
-                        <strong>{trait.name}</strong>
-                        {[...Array(5)].map((_, index) => (
-                            <PetsIcon
-                                key={index}
-                                color={index < trait.value ? 'primary' : 'disabled'}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
+                <BreedVitalStats>
+                    <Stats>
+                        <Image src={Dog} alt="life span" />
+                        <Typography>Dog Breed Group:</Typography>
+                    </Stats>
+                    <Stats>
+                        <Image src={Bone} alt="life span" />
+                        <Typography>Height:</Typography>
+                    </Stats>
+                    <Stats>
+                        <Image src={Scale} alt="life span" />
+                        <Typography>Weight:</Typography>
+                    </Stats>
+                    <Stats>
+                        <Image src={Heart} alt="life span" />
+                        <Typography>Life Span:</Typography>
+                    </Stats>
+                </BreedVitalStats>
+                {/* 
+                <h2>BREED: {dog.breed}</h2>
+                <h1>PUPPIES</h1>
+                <div>
+                    {dog.images[1].puppies.map((image, index) => (
+                        <img src={image} alt="puppy" key={index} />
+                    ))}
+                </div>
+                
+                <h1>ADULT HOOD</h1>
+                <div>
+                    {dog.images.map((image, index) => (
+                        <img src={image} alt="ADULT" key={index} />
+                    ))}
+                </div>
+                <div>
+                    {traits.map((trait, index) => (
+                        <div key={index}>
+                            <strong>{trait.name}</strong>
+                            {[...Array(5)].map((_, index) => (
+                                <PetsIcon
+                                    key={index}
+                                    color={index < trait.value ? 'primary' : 'disabled'}
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </div> */}
         </Container>
     );
 };

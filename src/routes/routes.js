@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../pages/home/home/Home';
+import Home from '../pages/home/page/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import * as Router from "../constants/routes";
 import Pet from '../pages/pet-details/page/Pet';
@@ -13,25 +13,11 @@ const Routers = () => {
     return (
         <BrowserRouter>
             <QueryClientProvider client={queryClient}>
+                <Header />
                 <Routes>
-                    <Route exact path={Router.HOME} element={
-                        <>
-                            <Header />
-                            <Home />
-                        </>
-                    } />
-                    <Route path={Router.PET} element={
-                        <>
-                            <Header />
-                            <Pet />
-                        </>
-                    } />
-                    <Route path={Router.NOT_FOUND} element={
-                        <>
-                            <Header />
-                            <NotFound />
-                        </>
-                    } />
+                    <Route exact path={Router.HOME} element={<Home />} />
+                    <Route path={Router.PET} element={<Pet />} />
+                    <Route path={Router.NOT_FOUND} element={<NotFound />} />
                 </Routes>
             </QueryClientProvider>
         </BrowserRouter>
