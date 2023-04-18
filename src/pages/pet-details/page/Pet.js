@@ -33,22 +33,23 @@ const Pet = () => {
                         return (
                             <Stats key={index}>
                                 <Image src={pet.icon} alt={pet.stat} />
-                                <Typography>{pet.stat}</Typography>
-                                    {pet.information === 'weight' ? (
-                                <Information>
+                                <Typography color="rgb(187, 14, 14)">{pet.stat}</Typography>
+                                {pet.information === 'weight' ? (
+                                    <Information>
+                                        <Typography color="gray">Male</Typography>
                                         <p>
                                             {formatWeight(dog.weight.male)}
                                         </p>
-                                        <br />
+                                        <Typography color="gray">Female</Typography>
                                         <p>
                                             {formatWeight(dog.weight.female)}
                                         </p>
-                                </Information>
-                                    ) : (
-                                <Information>
+                                    </Information>
+                                ) : (
+                                    <Information>
                                         <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
-                                </Information>
-                                    )}
+                                    </Information>
+                                )}
                             </Stats>
                         )
                     })}

@@ -43,9 +43,9 @@ export const Image = styled.img`
 
 export const Typography = styled.h2`
     font-size: 1em;
-    color: rgb(187, 14, 14);
+    color: ${props => props.color};
 `;
 
 export const Information = styled.div`
-    height: 3em;
+    height: 2em;
 `;
