@@ -7,17 +7,22 @@ export const petStat = [
     {
         stat: "Breed Group",
         icon: Dog,
+        information: "breed_group",
     },
     {
         stat: "Height",
         icon: Bone,
+        information: "breed_size",
     },
     {
         stat: "Weight",
         icon: Scale,
+        information: "weight.male.kg",
+        weight: "kg"
     },
     {
         stat: "Life Span",
         icon: Heart,
+        information: "life_span"
     }
 ];

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import PetsIcon from '@mui/icons-material/Pets';
 import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 
@@ -18,7 +17,8 @@ const Pet = () => {
     if (!dog) {
         return <LoadingScreen />
     }
-    console.log(dog)
+
+    console.log(dog.weight.male.kg)
     return (
         <Container>
             <Wrapper>
@@ -29,11 +29,16 @@ const Pet = () => {
                             <Stats key={index}>
                                 <Image src={pet.icon} alt={pet.stat} />
                                 <Typography>{pet.stat}</Typography>
+                                <p>
+                                    {pet.information.split(".").reduce((object, index) => object[index], dog)}
+                                </p>
                             </Stats>
                         )
                     })}
                 </BreedVitalStats>
-                {/* 
+
+            </Wrapper>
+            {/* 
                 <h1>PUPPIES</h1>
                 <div>
                     {dog.images[1].puppies.map((image, index) => (
@@ -48,7 +53,6 @@ const Pet = () => {
                     ))}
                 </div>
                 */}
-            </Wrapper>
         </Container>
     );
 };
