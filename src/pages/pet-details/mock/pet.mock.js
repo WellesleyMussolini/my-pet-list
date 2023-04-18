@@ -17,7 +17,7 @@ export const petStat = [
     {
         stat: "Weight",
         icon: Scale,
-        information: "weight.male.kg"
+        information: "weight",
     },
     {
         stat: "Life Span",

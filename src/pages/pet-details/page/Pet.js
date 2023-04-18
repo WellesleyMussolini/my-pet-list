@@ -19,6 +19,11 @@ const Pet = () => {
     }
 
     console.log(dog.weight)
+
+    const formatWeight = (weight) => {
+        return `${weight.kg} kg ( ${weight.pounds} lbs )`;
+    }
+    
     return (
         <Container>
             <Wrapper>
@@ -29,9 +34,15 @@ const Pet = () => {
                             <Stats key={index}>
                                 <Image src={pet.icon} alt={pet.stat} />
                                 <Typography>{pet.stat}</Typography>
-                                <p>
-                                    {pet.information.split(".").reduce((object, index) => object[index], dog)}
-                                </p>
+                                {pet.information === 'weight' ? (
+                                    <p>
+                                        {formatWeight(dog.weight.male)}
+                                        <br />
+                                         {formatWeight(dog.weight.female)}
+                                    </p>
+                                ) : (
+                                    <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
+                                )}
                             </Stats>
                         )
                     })}

@@ -21,7 +21,7 @@ export const BreedVitalStats = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 45em;
+    width: 55em;
     height: 12em;
     gap: 100px;
     background: #fff;
@@ -33,11 +33,11 @@ export const Stats = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* gap: 10px; */
+    gap: 8px;
 `;
 
 export const Image = styled.img`
-    width: 55px;
+    width: 45px;
     margin-bottom: 10px;
 `;
 
