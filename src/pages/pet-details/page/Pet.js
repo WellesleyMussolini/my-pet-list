@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper, Information } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 
 const Pet = () => {
@@ -23,7 +23,7 @@ const Pet = () => {
     const formatWeight = (weight) => {
         return `${weight.kg} kg ( ${weight.pounds} lbs )`;
     }
-    
+
     return (
         <Container>
             <Wrapper>
@@ -34,15 +34,21 @@ const Pet = () => {
                             <Stats key={index}>
                                 <Image src={pet.icon} alt={pet.stat} />
                                 <Typography>{pet.stat}</Typography>
-                                {pet.information === 'weight' ? (
-                                    <p>
-                                        {formatWeight(dog.weight.male)}
+                                    {pet.information === 'weight' ? (
+                                <Information>
+                                        <p>
+                                            {formatWeight(dog.weight.male)}
+                                        </p>
                                         <br />
-                                         {formatWeight(dog.weight.female)}
-                                    </p>
-                                ) : (
-                                    <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
-                                )}
+                                        <p>
+                                            {formatWeight(dog.weight.female)}
+                                        </p>
+                                </Information>
+                                    ) : (
+                                <Information>
+                                        <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
+                                </Information>
+                                    )}
                             </Stats>
                         )
                     })}
