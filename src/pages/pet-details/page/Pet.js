@@ -18,7 +18,7 @@ const Pet = () => {
         return <LoadingScreen />
     }
 
-    console.log(dog.weight.male.kg)
+    console.log(dog.weight)
     return (
         <Container>
             <Wrapper>
