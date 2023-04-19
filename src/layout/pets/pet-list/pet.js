@@ -13,7 +13,6 @@ const PetList = ({ pets }) => {
                         <Card
                             key={index}
                             image={pet.images[0].profile}
-                            image_alt={pet.breed}
                             id={pet._id}
                             name={pet.breed}
                             handle_pet_details={() => handleGetPetId(pet, "breed", "pet")}

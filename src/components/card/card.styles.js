@@ -15,18 +15,19 @@ export const Wrapper = styled.div`
     cursor: pointer;
 `;
 
-export const Image = styled.img`
-    display: block;
-    background-size: cover;
+export const Image = styled.div`
+    background-image: url(${props => props.image});
     background-repeat: no-repeat;
-    background-position: center center;
+    display: block;
     width: 100%;
+    height: 239.2px;
+    background-size: cover;
+    background-position: center center;
     user-select: none;
     touch-action: none;
     object-fit: cover;
     /* object-fit: contain; */
     /* object-fit: fill; */
-    height: 239.2px;
 `;
 
 export const Breed = styled.h5`
