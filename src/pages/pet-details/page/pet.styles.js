@@ -36,19 +36,12 @@ export const Stats = styled.div`
     gap: 8px;
 `;
 
-export const Image = styled.img`
-    /* width: 45px;
-    margin-bottom: 10px; */
-
-    width: 65px;
-`;
-
 export const Icon = styled.div`
     background-image: url(${props => props.image});
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
+    width: 65px;
+    height: 65px;
 `;
 
 export const Typography = styled.h2`
@@ -65,8 +58,6 @@ export const Typography = styled.h2`
 
 export const Information = styled.div`
     height: 2em;
-
-
 
     & > p{
         text-align: center;
