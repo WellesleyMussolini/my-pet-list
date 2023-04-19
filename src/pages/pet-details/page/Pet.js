@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper, Information } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Image, Typography, Wrapper, Information, Icon } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 
 const Pet = () => {
@@ -29,10 +29,11 @@ const Pet = () => {
             <Wrapper>
                 <h2>BREED: {dog.breed}</h2>
                 <BreedVitalStats>
+                    {/* <Image src={pet.icon} alt={pet.stat} /> */}
                     {petStat.map((pet, index) => {
                         return (
                             <Stats key={index}>
-                                <Image src={pet.icon} alt={pet.stat} />
+                                <Icon image={pet.icon} />
                                 <Typography color="rgb(187, 14, 14)">{pet.stat}</Typography>
                                 {pet.information === 'weight' ? (
                                     <Information>

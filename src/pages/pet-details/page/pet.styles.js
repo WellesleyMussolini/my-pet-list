@@ -37,15 +37,40 @@ export const Stats = styled.div`
 `;
 
 export const Image = styled.img`
-    width: 45px;
-    margin-bottom: 10px;
+    /* width: 45px;
+    margin-bottom: 10px; */
+
+    width: 65px;
+`;
+
+export const Icon = styled.div`
+    background-image: url(${props => props.image});
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
 `;
 
 export const Typography = styled.h2`
-    font-size: 1em;
-    color: ${props => props.color};
+    /* font-size: 1em; */
+    /* color: ${props => props.color}; */
+
+    /* ==================================== */
+    font-weight: 700;
+    color: #E21D23;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Quicksand",sans-serif;
 `;
 
 export const Information = styled.div`
     height: 2em;
+
+
+
+    & > p{
+        text-align: center;
+        font-size: 14px;
+        font-family: "Quicksand",sans-serif;
+    }
 `;
