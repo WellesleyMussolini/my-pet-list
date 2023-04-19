@@ -45,10 +45,7 @@ export const Icon = styled.div`
 `;
 
 export const Typography = styled.h2`
-    /* font-size: 1em; */
-    /* color: ${props => props.color}; */
-
-    /* ==================================== */
+    /* color: rgb(187, 14, 14); */
     font-weight: 700;
     color: #E21D23;
     font-size: 14px;
@@ -56,12 +53,13 @@ export const Typography = styled.h2`
     font-family: "Quicksand",sans-serif;
 `;
 
-export const Information = styled.div`
+export const StatsInfo = styled.div`
     height: 2em;
 
     & > p{
         text-align: center;
         font-size: 14px;
         font-family: "Quicksand",sans-serif;
+        color: rgb(84, 84, 74);
     }
 `;

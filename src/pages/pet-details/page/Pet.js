@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Typography, Wrapper, Information, Icon } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Typography, Wrapper, StatsInfo, Icon } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 
 const Pet = () => {
@@ -33,9 +33,9 @@ const Pet = () => {
                         return (
                             <Stats key={index}>
                                 <Icon image={pet.icon} />
-                                <Typography color="rgb(187, 14, 14)">{pet.stat}</Typography>
+                                <Typography>{pet.stat}</Typography>
                                 {pet.information === 'weight' ? (
-                                    <Information>
+                                    <StatsInfo>
                                         <Typography color="gray">Male</Typography>
                                         <p>
                                             {formatWeight(dog.weight.male)}
@@ -44,11 +44,11 @@ const Pet = () => {
                                         <p>
                                             {formatWeight(dog.weight.female)}
                                         </p>
-                                    </Information>
+                                    </StatsInfo>
                                 ) : (
-                                    <Information>
+                                    <StatsInfo>
                                         <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
-                                    </Information>
+                                    </StatsInfo>
                                 )}
                             </Stats>
                         )
