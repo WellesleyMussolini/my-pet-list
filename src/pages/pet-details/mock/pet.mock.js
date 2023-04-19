@@ -2,6 +2,7 @@ import Bone from "../img/bone.png";
 import Dog from "../img/pet.png";
 import Scale from "../img/weighing-machine.png";
 import Heart from "../img/heart-attack.png";
+import HeartSVG from "../img/icon-breed-lifespan.svg";
 
 export const petStat = [
     {
