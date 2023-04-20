@@ -72,7 +72,6 @@ const Pet = () => {
                 </div>
                 */}
         </Container>
-        
     );
 };
 
