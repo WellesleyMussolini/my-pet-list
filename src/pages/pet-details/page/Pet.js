@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, Characteristic, BreedCharacteristics } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, BreedCharacteristics } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 import PetsIcon from '@mui/icons-material/Pets';
 
