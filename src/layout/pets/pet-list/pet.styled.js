@@ -6,4 +6,5 @@ export const Container = styled.div`
     gap: 60px;
     margin: 100px 0;
     min-height: 700px;
+    
 `;
