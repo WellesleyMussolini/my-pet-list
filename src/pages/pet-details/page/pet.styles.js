@@ -63,3 +63,23 @@ export const StatsInfo = styled.div`
         color: rgb(84, 84, 74);
     }
 `;
+
+export const Characteristics = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20em;
+`;
+
+export const Characteristic = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const BreedCharacteristics = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
