@@ -54,6 +54,7 @@ const Pet = () => {
                         )
                     })}
                 </BreedVitalStats>
+                <h1>DOG</h1>
 
             </Wrapper>
             {/* 
