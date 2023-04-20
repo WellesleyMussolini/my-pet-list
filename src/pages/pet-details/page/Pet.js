@@ -5,7 +5,7 @@ import { pet } from "../../../services/pet-service";
 import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, BreedCharacteristics, Puppies, Adult } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 import PetsIcon from '@mui/icons-material/Pets';
-import PetGallery from "../../pet-gallery/PetGallery";
+import PetGallery from "../components/pet-gallery/PetGallery";
 
 const Pet = () => {
     const { id } = useParams();
