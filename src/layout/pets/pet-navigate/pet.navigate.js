@@ -7,5 +7,4 @@ export const usePetNavigate = () => {
     const handleGetPetId = (id, params, route) => navigate(`/${route}/${petRouteName(id[params])}`);
 
     return handleGetPetId;
-    
 };
