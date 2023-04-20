@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Typography, Wrapper, StatsInfo, Icon, Characteristics, Characteristic, BreedCharacteristics } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, Characteristic, BreedCharacteristics } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 import PetsIcon from '@mui/icons-material/Pets';
 
@@ -26,64 +26,64 @@ const Pet = () => {
     }
 
     const categories = [
-        { name: 'FAMILY' },
-        { name: 'PHYSICAL' },
-        { name: 'SOCIAL' },
-        { name: 'HEALTH' }
+        { name: "FAMILY" },
+        { name: "PHYSICAL" },
+        { name: "SOCIAL" },
+        { name: "HEALTH" }
     ];
     return (
         <Container>
-            <Wrapper>
-                <h2>BREED: {dog.breed}</h2>
-                <BreedVitalStats>
-                    {petStat.map((pet, index) => {
-                        return (
-                            <Stats key={index}>
-                                <Icon image={pet.icon} />
-                                <Typography>{pet.stat}</Typography>
-                                {pet.information === 'weight' ? (
-                                    <StatsInfo>
-                                        <Typography color="gray">Male</Typography>
-                                        <p>
-                                            {formatWeight(dog.weight.male)}
-                                        </p>
-                                        <Typography color="gray">Female</Typography>
-                                        <p>
-                                            {formatWeight(dog.weight.female)}
-                                        </p>
-                                    </StatsInfo>
-                                ) : (
-                                    <StatsInfo>
-                                        <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
-                                    </StatsInfo>
-                                )}
-                            </Stats>
-                        )
-                    })}
-                </BreedVitalStats>
+            <h2>BREED: {dog.breed}</h2>
+            <BreedVitalStats>
+                {petStat.map((pet, index) => {
+                    return (
+                        <Stats key={index}>
+                            <Icon image={pet.icon} />
+                            <Typography>{pet.stat}</Typography>
+                            {pet.information === 'weight' ? (
+                                <StatsInfo>
+                                    <Typography color="gray">Male</Typography>
+                                    <p>
+                                        {formatWeight(dog.weight.male)}
+                                    </p>
+                                    <Typography color="gray">Female</Typography>
+                                    <p>
+                                        {formatWeight(dog.weight.female)}
+                                    </p>
+                                </StatsInfo>
+                            ) : (
+                                <StatsInfo>
+                                    <p>{pet.information.split(".").reduce((object, index) => object[index], dog)}</p>
+                                </StatsInfo>
+                            )}
+                        </Stats>
+                    )
+                })}
+            </BreedVitalStats>
 
-                <BreedCharacteristics>
-                    <h1>Breed Characteristics</h1>
-                    {categories.map((category, index) => (
-                        <div key={index}>
-                            <h3>{category.name}</h3>
-                            {dog.breed_characteristics[category.name].map((characteristic, index) => (
-                                <Characteristics key={index}>
+            <BreedCharacteristics>
+                <h1>Breed Characteristics</h1>
+                {categories.map((category, index) => (
+                    <div key={index}>
+                        <h3>{category.name}</h3>
+                        {dog.breed_characteristics[category.name].map((characteristic, index) => (
+                            <Characteristics key={index}>
+                                <h4>
                                     <strong>{characteristic.characteristics}</strong>
-                                    <Characteristic>
-                                        {[...Array(5)].map((_, index) => (
-                                            <PetsIcon
-                                                key={index}
-                                                color={index < characteristic.points ? 'primary' : 'disabled'}
-                                            />
-                                        ))}
-                                    </Characteristic>
-                                </Characteristics>
-                            ))}
-                        </div>
-                    ))}
-                </BreedCharacteristics>
-            </Wrapper>
+                                </h4>
+                                <div>
+                                    {[...Array(5)].map((_, index) => (
+                                        <PetsIcon
+                                            key={index}
+                                            color={index < characteristic.points ? "primary" : "disabled"}
+                                        />
+                                    ))}
+                                </div>
+                            </Characteristics>
+                        ))}
+                    </div>
+                ))}
+            </BreedCharacteristics>
             <h1>PUPPIES</h1>
             <div>
                 {dog.images[1].puppies.map((image, index) => (

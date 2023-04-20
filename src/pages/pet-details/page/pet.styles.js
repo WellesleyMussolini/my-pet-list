@@ -9,12 +9,6 @@ export const Container = styled.div`
     background: #f4f4f4;
 `;
 
-export const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
 
 export const BreedVitalStats = styled.div`
     display: flex;
@@ -68,13 +62,8 @@ export const Characteristics = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     width: 20em;
-`;
-
-export const Characteristic = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const BreedCharacteristics = styled.div`
@@ -82,4 +71,9 @@ export const BreedCharacteristics = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    & > h1, h3{
+        text-align: center;
+        font-weight: bolder;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 `;
