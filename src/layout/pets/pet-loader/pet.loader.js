@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./pet.module.css";
 import Pets from "../pet-list/pet.list";
 import CardSkeleton from "../../../components/card-skeleton/CardSkeleton";
+import { Wrapper } from "./pet.loader.styles";
 
 const Pet = ({ pets, card_amount }) => {
     return (
-        <div className={styles.wrapper}>
+        <Wrapper>
             {
                 pets.length === 0 ? (
                     Array.from({ length: card_amount }).map((_, index) => (
@@ -14,7 +14,7 @@ const Pet = ({ pets, card_amount }) => {
                 ) : (
                     <Pets array={pets} />
                 )}
-        </div>
+        </Wrapper>
     );
 };
 
