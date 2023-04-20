@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, BreedCharacteristics } from "./pet.styles";
+import { Container, BreedVitalStats, Stats, Typography, StatsInfo, Icon, Characteristics, BreedCharacteristics, Puppies, Adult } from "./pet.styles";
 import { petStat } from "../mock/pet.mock";
 import PetsIcon from '@mui/icons-material/Pets';
+import PetGallery from "../../pet-gallery/PetGallery";
 
 const Pet = () => {
     const { id } = useParams();
@@ -31,6 +32,10 @@ const Pet = () => {
         { name: "SOCIAL" },
         { name: "HEALTH" }
     ];
+
+
+
+
     return (
         <Container>
             <h2>BREED: {dog.breed}</h2>
@@ -86,16 +91,11 @@ const Pet = () => {
             </BreedCharacteristics>
             <h1>PUPPIES</h1>
             <div>
-                {dog.images[1].puppies.map((image, index) => (
-                    <img src={image} alt="puppy" key={index} />
-                ))}
+                <PetGallery images={dog.images[1].puppies} />
             </div>
-
-            <h1>ADULT HOOD</h1>
+            <h1>ADULT</h1>
             <div>
-                {dog.images.map((image, index) => (
-                    <img src={image} alt="ADULT" key={index} />
-                ))}
+                <PetGallery images={dog.images} />
             </div>
         </Container>
     );

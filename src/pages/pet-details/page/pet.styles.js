@@ -77,3 +77,22 @@ export const BreedCharacteristics = styled.div`
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 `;
+
+export const Puppies = styled.div`
+    width: 1000px;
+    background-color: red;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    & > img{
+        width: 50em;
+        object-fit: cover;
+    }
+`;
+
+export const Adult = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
