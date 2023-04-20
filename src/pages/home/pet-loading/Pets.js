@@ -23,5 +23,4 @@ const Pets = ({ pets, Loader }) => {
     );
 };
 
-
 export default Pets;
