@@ -102,37 +102,3 @@ const Pet = () => {
 };
 
 export default Pet;
-
-
-
-/*
-import PetsIcon from '@mui/icons-material/Pets';
-
-
-const Pet = () => {
-    const traits = [
-        { name: 'Inteligência', value: 5 },
-        { name: 'Agilidade', value: 4 },
-        { name: 'Força', value: 4 },
-        { name: 'Agressividade', value: 2 },
-    ];
-     return (
-            <div>
-                <h2>Border Collie</h2>
-                {traits.map((trait, index) => (
-                    <div key={index}>
-                        <strong>{trait.name}:</strong>
-                        {[...Array(5)].map((_, i) => (
-                            <PetsIcon
-                                key={i}
-                                color={i < trait.value ? 'primary' : 'disabled'}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
-                );
-};
-
-export default Pet;
-*/
