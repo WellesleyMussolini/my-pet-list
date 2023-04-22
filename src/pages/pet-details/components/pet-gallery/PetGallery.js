@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import "./pet.css";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
@@ -13,7 +12,6 @@ const Gallery = styled.div`
     height: 50em;
     width: 80em;
     overflow: hidden;
-    background: red;
 `;
 
 const Image = styled.img`
@@ -29,17 +27,19 @@ const Controlls = styled.div`
     top: calc(100% + 1em);
     width: 100%;
     gap: 30px;
-    & > svg{
-        font-size: 2em;
-        cursor: pointer;
-    }
 `;
 
-const Slide = ({ slide, handleSlideClick }) => {
-    return (
-        <Image src={slide.image} onClick={() => handleSlideClick(slide.index)} />
-    );
-};
+const SlideWrapper = styled.div`
+    display: flex;
+    position: absolute;
+    transition: transform 600ms cubic-bezier(0.25, 1, 0.35, 1);
+`;
+
+const Slider = styled.div`
+    position: relative;
+    height: 70vmin;
+    width: 70vmin;
+`;
 
 const PetGallery = (props) => {
     const [current, setCurrent] = useState(0);
@@ -65,21 +65,16 @@ const PetGallery = (props) => {
 
     return (
         <Gallery>
-            <div className="slider">
-                <div
-                    className="slider__wrapper"
-                    style={wrapperTransform}
-                >
-                    {images.map((image, index) => {
-                        return (
-                            <Slide
-                                key={index}
-                                slide={{ image: image, index: index }}
-                                handleSlideClick={handleSlideClick}
-                            />
-                        );
-                    })}
-                </div>
+            <Slider>
+                <SlideWrapper style={wrapperTransform}>
+                    {images.map((image, index) => (
+                        <Image
+                            key={index}
+                            src={image}
+                            onClick={() => handleSlideClick(index)}
+                        />
+                    ))}
+                </SlideWrapper>
                 <Controlls>
                     <ArrowBackIosNewIcon
                         type="previous"
@@ -92,8 +87,7 @@ const PetGallery = (props) => {
                         onClick={handleNextClick}
                     />
                 </Controlls>
-            </div>
-
+            </Slider>
         </Gallery>
     );
 }
