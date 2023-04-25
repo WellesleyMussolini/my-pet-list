@@ -1,94 +1,87 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Gallery = styled.div`
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    height: 50em;
-    width: 80em;
     overflow: hidden;
+    position: relative;
+    width: 100%;
+    transition: left 0.5s ease;
+    left: ${({ centerIndex, imageWidth, currentImageIndex }) => `calc(50% - ${imageWidth / 2}px - ${(currentImageIndex - centerIndex) * (imageWidth + 20)}px)`};
+`;
+
+const ImageCard = styled.div`
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    position: relative;
+    left: ${({ index, centerIndex, imageWidth }) => `${(index - centerIndex) * (imageWidth + 20)}px`};
+    z-index: ${({ index, currentImageIndex }) => currentImageIndex === index ? 1 : 0};
+
+    ${({ selected }) => selected && `
+        transform: scale(1.1);
+        filter: none;
+        z-index: 2;
+        left: 0;
+    `}
 `;
 
 const Image = styled.img`
-    width: 50em;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 
 const Controlls = styled.div`
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    position: absolute;
-    top: calc(100% + 1em);
-    width: 100%;
-    gap: 30px;
 `;
 
-const SlideWrapper = styled.div`
-    display: flex;
-    position: absolute;
-    transition: transform 600ms cubic-bezier(0.25, 1, 0.35, 1);
-`;
+const PetGallery = ({ images }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const imageWidth = 220;
+    const centerIndex = Math.floor(images.length / 2);
 
-const Slider = styled.div`
-    position: relative;
-    height: 70vmin;
-    width: 70vmin;
-`;
-
-const PetGallery = (props) => {
-    const [current, setCurrent] = useState(0);
-
-    const handlePreviousClick = () => {
-        const previous = current - 1;
-        setCurrent(previous < 0 ? props.images.length - 1 : previous);
+    const selectImage = (index) => {
+        setCurrentImageIndex(index);
     }
 
-    const handleNextClick = () => {
-        const next = current + 1;
-        setCurrent(next === props.images.length ? 0 : next);
-    }
-
-    const handleSlideClick = (index) => {
-        if (current !== index) setCurrent(index);
-    }
-
-    const { images } = props;
-    const wrapperTransform = {
-        transform: `translateX(-${current * (100 / images.length)}%)`,
-    };
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentImageIndex(currentIndex => (currentIndex + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(intervalId);
+    }, [images.length]);
 
     return (
-        <Gallery>
-            <Slider>
-                <SlideWrapper style={wrapperTransform}>
-                    {images.map((image, index) => (
-                        <Image
-                            key={index}
-                            src={image}
-                            onClick={() => handleSlideClick(index)}
-                        />
-                    ))}
-                </SlideWrapper>
-                <Controlls>
-                    <ArrowBackIosNewIcon
-                        type="previous"
-                        title="Go to previous slide"
-                        onClick={handlePreviousClick}
-                    />
-                    <ArrowForwardIosIcon
-                        type="next"
-                        title="Go to next slide"
-                        onClick={handleNextClick}
-                    />
-                </Controlls>
-            </Slider>
-        </Gallery>
+        <Container>
+            {/* <Gallery centerIndex={centerIndex} currentImageIndex={currentImageIndex} imageWidth={imageWidth}> */}
+            <Gallery>
+                {images.map((image, index) => (
+                    <ImageCard key={index} index={index} centerIndex={centerIndex} selected={index === currentImageIndex}>
+                        <Image src={image} alt={`Pet ${index}`} />
+                    </ImageCard>
+                ))}
+            </Gallery>
+            <Controlls>
+                <ArrowBackIosNewIcon onClick={() => selectImage((currentImageIndex - 1 + images.length) % images.length)} />
+                <ArrowForwardIosIcon onClick={() => selectImage((currentImageIndex + 1) % images.length)} />
+            </Controlls>
+        </Container>
     );
 }
 
