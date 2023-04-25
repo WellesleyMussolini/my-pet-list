@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import LoadingScreen from "../../../components/Loading/Loading";
 import { pet } from "../../../services/pet-service";
-import { Container } from "./pet.styles";
+import { Container, Title } from "./pet.styles";
 import PetGallery from "../components/pet-gallery/PetGallery";
 import Characteristics from "../components/characteristics/Characteristics";
 import PetStats from "../components/pet-stats/PetStats";
@@ -20,16 +20,16 @@ const Pet = () => {
         return <LoadingScreen />
     }
 
-
     return (
         <Container>
-            <h2>{dog.breed}</h2>
+            <Title>{dog.breed}</Title>
+            <p>{dog.description}</p>
             <PetStats petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
-            {/* <Characteristics pet={dog.breed_characteristics} /> */}
+            <Characteristics pet={dog.breed_characteristics} />
             <h1>PUPPIES</h1>
-            <PetGallery images={dog.images[1].puppies} />
+            <PetGallery images={dog.images.puppies} />
             <h1>ADULT</h1>
-            <PetGallery images={dog.images} />
+            <PetGallery images={dog.images.gallery} />
         </Container>
     );
 };

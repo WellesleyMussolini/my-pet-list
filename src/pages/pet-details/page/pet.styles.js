@@ -5,8 +5,21 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: calc(100vh - 80px); 
+    min-height: 100vh;
     background: #f4f4f4;
+    padding: 100px 0;
+    gap: 20px;
+
+    & > p{
+        width: 80em;
+    };
+`;
+
+export const Title = styled.h1`
+    font-size: 2.2em;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
 `;
 
 export const Puppies = styled.div`
