@@ -38,14 +38,10 @@ export const Typography = styled.h2`
     font-family: "Quicksand",sans-serif;
 `;
 
-export const StatsInfo = styled.div`
-    height: 2em;
-    display: flex;
-
-    & > p{
-        text-align: center;
-        font-size: 14px;
-        font-family: "Quicksand",sans-serif;
-        color: rgb(84, 84, 74);
-    }
+export const Info = styled.p`
+    text-align: center;
+    font-size: 14px;
+    font-family: "Quicksand",sans-serif;
+    color: rgb(84, 84, 74);
 `;
+

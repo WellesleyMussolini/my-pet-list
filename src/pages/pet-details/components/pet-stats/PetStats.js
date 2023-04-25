@@ -1,6 +1,6 @@
 import React from "react";
 import { petStat } from "../../mock/pet.mock";
-import { Container, Icon, Stats, StatsInfo, Typography } from "./pet.stats.styles";
+import { Container, Icon, Info, Stats, Typography } from "./pet.stats.styles";
 
 const PetStats = ({ petList, maleWeight, femaleWeight }) => {
     const formatWeight = (weight) => {
@@ -24,25 +24,21 @@ const PetStats = ({ petList, maleWeight, femaleWeight }) => {
     console.log(combinedWeight)
     return (
         <Container>
-            {petStat.map((pet, index) => {
-                return (
-                    <Stats key={index}>
-                        <Icon image={pet.icon} />
-                        <Typography color="#E21D23">{pet.stat}</Typography>
-                        {pet.information === 'weight' ? (
-                            <StatsInfo>
-                                    <p>
-                                        {combinedWeight}
-                                    </p>
-                            </StatsInfo>
-                        ) : (
-                            <StatsInfo>
-                                <p>{pet.information.split(".").reduce((object, index) => object[index], petList)}</p>
-                            </StatsInfo>
-                        )}
-                    </Stats>
-                )
-            })}
+            {
+                petStat.map((pet, index) => {
+                    return (
+                        <Stats key={index}>
+                            <Icon image={pet.icon} />
+                            <Typography color="#E21D23">{pet.stat}</Typography>
+                            {pet.information === "weight" ? (
+                                <Info>{combinedWeight}</Info>
+                            ) : (
+                                <Info>{pet.information.split(".").reduce((object, index) => object[index], petList)}</Info>
+                            )}
+                        </Stats>
+                    )
+                })
+            }
         </Container>
     )
 };
