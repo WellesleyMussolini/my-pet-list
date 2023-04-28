@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import LoadingScreen from "../../../components/Loading/Loading";
+import LoadingScreen from "../../../components/loading/Loading";
 import { pet } from "../../../services/pet-service";
 import { Container, Title } from "./pet.styles";
 import PetGallery from "../components/pet-gallery/PetGallery";

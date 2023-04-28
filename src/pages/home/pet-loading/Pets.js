@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper, LoadingCardScreen } from "./pets.styles";
-import Loading from "../../../components/Loading/Loading";
+import Loading from "../../../components/loading/Loading";
 import { cardSkeleton } from "../utils/card-skeleton";
 import PetList from "../../../layout/pets/pet-list/pet";
 import CardSkeleton from "../../../components/card-skeleton/CardSkeleton";
