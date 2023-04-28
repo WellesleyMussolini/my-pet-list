@@ -57,7 +57,7 @@ export const Characteristic = styled.div`
     color: rgba(146, 146, 146);
 
     &:hover {
-        background: rgb(0, 157, 255);
+        background: rgb(36, 169, 251);
         transition: all 0.5s ease;
         cursor: pointer;
     }

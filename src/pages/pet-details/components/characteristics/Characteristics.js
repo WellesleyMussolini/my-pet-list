@@ -27,7 +27,7 @@ const Characteristics = ({ pet }) => {
                                         [...Array(5)].map((_, index) => (
                                             <PetsIcon
                                                 key={index}
-                                                style={{ color: index < characteristic.points ? "rgb(0, 157, 255)" : "rgba(0, 0, 0, 0.26)" }}
+                                                style={{ color: index < characteristic.points ? "rgb(36, 169, 251)" : "rgba(0, 0, 0, 0.26)" }}
                                             />
                                         ))
                                     }
