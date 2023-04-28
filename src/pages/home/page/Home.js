@@ -9,9 +9,8 @@ import Error from "../../../components/error/Error";
 
 const Home = () => {
     const [search, setSearch] = useState("");
-    const [pets, setPets] = useState([]);
 
-    const { isLoading } = useQuery("pets", async () => await pet.get(setPets, "/pets", "data"));
+    const { isLoading, data: pets } = useQuery("pets", async () => await pet.get());
 
     const petsFilter = useMemo(() => {
         return pet_filter(pets, search, "breed");
