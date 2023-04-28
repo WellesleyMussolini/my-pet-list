@@ -24,8 +24,8 @@ export const Logo = styled.div`
     }
 
     & > img:hover{
-        transform: scale(1.1);
-        transition: 0.5s;
+        transform: scale(1.2);
+        transition: 0.4s;
     }
 `;
 
