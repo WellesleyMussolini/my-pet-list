@@ -7,11 +7,11 @@ export const Container = styled.div`
     flex-direction: column;
     min-height: 100vh;
     background: #f4f4f4;
+    overflow: hidden;
     padding: 100px 0;
     gap: 20px;
-
     & > p{
-        width: 80em;
+        width: 55em;
     };
 `;
 
@@ -26,7 +26,6 @@ export const Puppies = styled.div`
     width: 1000px;
     background-color: red;
     height: 400px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     flex-direction: row;

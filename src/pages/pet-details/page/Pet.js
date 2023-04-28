@@ -5,14 +5,14 @@ import { pet } from "../../../services/pet-service";
 import { Container, Title } from "./pet.styles";
 import PetGallery from "../components/pet-gallery/PetGallery";
 import Characteristics from "../components/characteristics/Characteristics";
-import PetStats from "../components/pet-stats/PetStats";
+import Overview from "../components/pet-overview/Overview";
 
 const Pet = () => {
     const { id } = useParams();
     const [dog, setDog] = useState(null);
 
     useEffect(() => {
-        pet.get(setDog, `/pets/${id}`, "data");
+        pet.getById(id).then((data) => setDog(data));
         return;
     }, [id]);
 
@@ -24,7 +24,7 @@ const Pet = () => {
         <Container>
             <Title>{dog.breed}</Title>
             <p>{dog.description}</p>
-            <PetStats petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
+            <Overview petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
             <Characteristics pet={dog.breed_characteristics} />
             <h1>PUPPIES</h1>
             <PetGallery images={dog.images.puppies} />
