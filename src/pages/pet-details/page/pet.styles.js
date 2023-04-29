@@ -6,13 +6,11 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
+    background: #EFEFEF;
     overflow: hidden;
     padding: 100px 0;
-    gap: 20px;
-    & > p{
-        width: 55em;
-    };
+    gap: 25px;
 `;
 
 export const Title = styled.h1`
@@ -20,6 +18,13 @@ export const Title = styled.h1`
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: gray;
+`;
+
+export const Description = styled.div`
+    width: 55em;
+    & > p {
+        margin-bottom: 35px;
+    }
 `;
 
 export const Puppies = styled.div`
