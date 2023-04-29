@@ -15,14 +15,17 @@ export const Container = styled.div`
     & > svg {
         height: 100%;
         width: 40px;
-        background: #cd9042;
+        /* background: #cd9042; */
+        background: rgb(0, 131, 212);
+        color: #fff;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         padding: 5px;
     };
 
     & > svg:hover{
-        background: #d69136;
+        /* background: #d69136; */
+        background: rgb(0, 157, 255);
         transition: 0.5s;
         cursor: pointer;
     }
