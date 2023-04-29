@@ -29,7 +29,7 @@ const Overview = ({ petList, maleWeight, femaleWeight }) => {
                     return (
                         <Stats key={index}>
                             <Icon image={pet.icon} />
-                            <Typography color="#E21D23">{pet.stat}</Typography>
+                            <Typography color="rgb(0, 131, 212)">{pet.stat}</Typography>
                             {pet.information === "weight" ? (
                                 <Info>{combinedWeight}</Info>
                             ) : (
