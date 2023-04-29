@@ -19,7 +19,6 @@ const Pet = () => {
     if (!dog) {
         return <LoadingScreen />
     }
-
     return (
         <Container>
             <Title>{dog.breed}</Title>
@@ -30,9 +29,9 @@ const Pet = () => {
             </Description>
             <Overview petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
             <Characteristics pet={dog.breed_characteristics} />
-            <h1>PUPPIES</h1>
+            <Title>PUPPIES</Title>
             <PetGallery images={dog.images.puppies} />
-            <h1>GROWN</h1>
+            <Title>GROWN</Title>
             <PetGallery images={dog.images.gallery} />
         </Container>
     );
