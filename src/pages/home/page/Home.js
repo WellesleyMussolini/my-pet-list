@@ -1,10 +1,10 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useQuery } from "react-query";
 import { pet } from "../../../services/pet-service";
 import Input from "../../../components/input-search/Input";
 import { Container } from "./home.styles";
 import { pet_filter } from "../../../utils/pet.filter";
-import Pets from "../pet-loading/Pets";
+import Pets from "../pet-loader/Pets";
 import Error from "../../../components/error/Error";
 
 const Home = () => {
@@ -16,9 +16,11 @@ const Home = () => {
         return pet_filter(pets, search, "breed");
     }, [pets, search]);
 
-    if (!isLoading && pets.length === 0) {
+
+    if (!isLoading && (!pets || !Array.isArray(pets) || pets.length === 0)) {
         return <Error error="PETS NOT FOUND" />;
     }
+ 
 
     return (
         <Container>
