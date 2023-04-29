@@ -1,35 +1,31 @@
-import React, { useState, useEffect, useRef } from "react";
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Container, Controlls, Gallery, Images } from "./pet.gallery.styles";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Container, Image } from "./pet.gallery.styles";
+
 
 const PetGallery = ({ images }) => {
-    const petSlider = useRef(null);
-    console.log(petSlider);
-
-    const prevPicture = (event) => {
-        event.preventDefault(); 
-        petSlider.current.scrollLeft -= petSlider.current.offsetWidth;
-
-    };
-
-    const nextPicture = (event) => {
-        event.preventDefault(); 
-        petSlider.current.scrollLeft += petSlider.current.offsetWidth;
-    };
     return (
         <Container>
-            <Gallery ref={petSlider}>
+            <Swiper
+                slidesPerView={3}
+                centeredSlides={true}
+                spaceBetween={30}
+                pagination
+                navigation={true}
+                modules={[Pagination, Navigation]}>
                 {images.map((image, index) => (
-                    <Images src={image} alt={`Pet ${index}`} />
+                    <SwiperSlide>
+                        <Image key={index} src={image} alt={`Pet ${index}`} />
+                    </SwiperSlide>
                 ))}
-            </Gallery>
-            <Controlls>
-                <ArrowBackIosNewIcon onClick={prevPicture} />
-                <ArrowForwardIosIcon onClick={nextPicture} />
-            </Controlls>
+            </Swiper>
         </Container>
-    );
-}
+    )
+};
 
 export default PetGallery;

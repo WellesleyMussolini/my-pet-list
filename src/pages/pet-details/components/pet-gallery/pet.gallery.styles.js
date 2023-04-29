@@ -1,32 +1,36 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-`;
+    width: 80em;
+    margin: 0 100%;
+    cursor: grab;
+    
+    & .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px 60px 20px;
+    }
 
-export const Gallery = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 50em;
-    overflow: hidden;
-    & {
-        gap: 15px;
+    .swiper {
+        width: 100%;
+    }
+
+    & .swiper:active {
+        cursor: grabbing;
     }
 `;
 
-export const Images = styled.img`
-    width: 200px;
-    height: 200px;
+export const Image = styled.img`
+    width: 250px;
+    height: 250px;
     object-fit: cover;
-`;
 
-export const Controlls = styled.div`
-    display: flex;
-    flex-direction: row;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* padrão */
 `;
