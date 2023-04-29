@@ -5,7 +5,8 @@
 <style type="text/css">
 	.st0{stroke:#EF517E;stroke-width:6;stroke-miterlimit:10;}
 	.st1{fill:none;}
-	.st2{fill:#B42025;}
+	<!-- .st2{fill:#B42025;} -->
+	.st2{fill:rgb(4, 80, 201);}
 	.st3{fill:#2B2C2B;}
 </style>
 <rect x="53.9" y="161.6" class="st1" width="931.1" height="735.8"/>
