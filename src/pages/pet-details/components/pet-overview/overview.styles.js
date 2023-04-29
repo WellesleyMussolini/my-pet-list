@@ -32,9 +32,7 @@ export const Icon = styled.div`
 `;
 
 export const Typography = styled.h2`
-    /* color: rgb(187, 14, 14); */
     font-weight: 700;
-    /* color: #E21D23; */
     color: ${props => props.color};
     font-size: 14px;
     text-align: center;

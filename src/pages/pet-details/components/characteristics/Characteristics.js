@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Wrapper, TitleContainer, Characteristic, Information } from "./characteristics.styles";
 import PetsIcon from '@mui/icons-material/Pets';
 
