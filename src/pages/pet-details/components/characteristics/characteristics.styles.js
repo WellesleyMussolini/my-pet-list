@@ -70,6 +70,10 @@ export const Characteristic = styled.div`
         color: #fff !important;
     } 
 
+    &:hover svg:not([style*="color: rgb(36, 169, 251)"]) {
+        color: rgba(0, 0, 0, 0.26) !important; 
+    }
+
     & > div{
         display: flex;
         flex-direction: row;
