@@ -9,8 +9,15 @@ import Error from "../../../components/error/Error";
 
 const Home = () => {
     const [search, setSearch] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
-    const { isLoading, data: pets } = useQuery("pets", async () => await pet.get());
+    useEffect(() => {
+        setTimeout(() => {
+            return setIsLoading(false);
+        }, 10000);
+    }, []);
+
+    const { data: pets } = useQuery("pets", async () => await pet.get());
 
     const petsFilter = useMemo(() => {
         return pet_filter(pets, search, "breed");
@@ -19,7 +26,7 @@ const Home = () => {
     if (!isLoading && (!pets || !Array.isArray(pets) || pets.length === 0)) {
         return <Error error="PETS NOT FOUND" />;
     }
- 
+
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
