@@ -16,12 +16,10 @@ const Home = () => {
         return pet_filter(pets, search, "breed");
     }, [pets, search]);
 
-
     if (!isLoading && (!pets || !Array.isArray(pets) || pets.length === 0)) {
         return <Error error="PETS NOT FOUND" />;
     }
  
-
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
