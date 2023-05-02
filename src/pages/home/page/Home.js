@@ -17,7 +17,7 @@ const Home = () => {
     }, [pets, search]);
 
     if (!isLoading && !pets.length) {
-        return <Error error="PETS WERE NOT FOUND" />
+        return <Error error="NO PETS FOUND" />
     }
     return (
         <Container>
