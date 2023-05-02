@@ -6,6 +6,7 @@ import { Container, Title, Description } from "./pet.styles";
 import PetGallery from "../components/pet-gallery/PetGallery";
 import Characteristics from "../components/characteristics/Characteristics";
 import Overview from "../components/pet-overview/Overview";
+import { paragraphs } from "../utils/paragraphs";
 
 const Pet = () => {
     const { id } = useParams();
@@ -19,14 +20,12 @@ const Pet = () => {
     if (!dog) {
         return <LoadingScreen />
     }
+
+    const description = paragraphs(dog.description)
     return (
         <Container>
             <Title>{dog.breed}</Title>
-            <Description>
-                {dog.description.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                ))}
-            </Description>
+            <Description>{description}</Description>
             <Overview petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
             <Characteristics pet={dog.breed_characteristics} />
             <Title>PUPPIES</Title>

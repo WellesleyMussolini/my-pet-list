@@ -9,7 +9,7 @@ export const Container = styled.div`
     /* background: #f4f4f4; */
     background: #EFEFEF;
     overflow: hidden;
-    padding: 100px 0;
+    padding: 50px 0;
     gap: 25px;
 `;
 
