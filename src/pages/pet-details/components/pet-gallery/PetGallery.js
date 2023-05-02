@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Container, Image } from "./pet.gallery.styles";
 
-
 const PetGallery = ({ images }) => {
     return (
         <Container>
