@@ -4,13 +4,20 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100px;
+    margin-top: 20px;
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     height: 40px;
-    margin-top: 55px;
-    margin-bottom: -30px;
     z-index: 20;
     width: 28em;
     background: #fff;
+    border-radius: 0 10px 10px 0;
 
     & > svg {
         height: 100%;
