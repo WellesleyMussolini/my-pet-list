@@ -1,27 +1,10 @@
 import React from "react";
 import { petStat } from "../../mock/pet.mock";
 import { Container, Icon, Info, Stats, Typography } from "./overview.styles";
+import { breed_average_weight } from "../../utils/average.weight";
 
 const Overview = ({ petList, maleWeight, femaleWeight }) => {
-    const formatWeight = (weight) => {
-        return `${weight.kg} kg`;
-    }
-    const combineWeight = (femaleWeight, maleWeight) => {
-        const minFemale = femaleWeight.kg.substring(0, 2);
-        const maxMale = maleWeight.kg.substring(2);
-        const minFemaleLbs = femaleWeight.pounds.substring(0, 2);
-        const maxMaleLbs = maleWeight.pounds.substring(2);
-
-        const combined = {
-            kg: `${minFemale}${maxMale}`,
-            pounds: `${minFemaleLbs}${maxMaleLbs}`,
-        };
-
-        return formatWeight(combined);
-    };
-
-    const combinedWeight = combineWeight(femaleWeight, maleWeight);
-    console.log(combinedWeight)
+    const combinedWeight = breed_average_weight(femaleWeight, maleWeight);
     return (
         <Container>
             {
