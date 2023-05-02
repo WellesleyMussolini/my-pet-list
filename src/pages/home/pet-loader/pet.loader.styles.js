@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     background: #edf0f2;
+    height: 700px;
 `;
 
 export const LoadingCardScreen = styled.div`
