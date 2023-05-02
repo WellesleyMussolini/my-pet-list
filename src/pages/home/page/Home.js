@@ -1,32 +1,24 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { pet } from "../../../services/pet-service";
 import Input from "../../../components/input-search/Input";
 import { Container } from "./home.styles";
 import { pet_filter } from "../../../utils/pet.filter";
-import Pets from "../pet-loader/Pets";
+import Pets from "../pet-loader/pet.loader";
 import Error from "../../../components/error/Error";
 
 const Home = () => {
     const [search, setSearch] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        setTimeout(() => {
-            return setIsLoading(false);
-        }, 10000);
-    }, []);
-
-    const { data: pets } = useQuery("pets", async () => await pet.get());
+    const { isLoading, data: pets } = useQuery("pets", async () => await pet.get());
 
     const petsFilter = useMemo(() => {
         return pet_filter(pets, search, "breed");
     }, [pets, search]);
 
-    if (!isLoading && (!pets || !Array.isArray(pets) || pets.length === 0)) {
-        return <Error error="PETS NOT FOUND" />;
+    if (!isLoading && !pets.length) {
+        return <Error error="PETS WERE NOT FOUND" />
     }
-
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
