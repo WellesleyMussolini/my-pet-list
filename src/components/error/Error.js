@@ -1,7 +1,7 @@
-import { ErrorMessage, Wrapper } from "./error.styles";
+import { Text } from "./error.styles";
 
 const Error = ({error}) => {
-    return <Wrapper><ErrorMessage>{error}</ErrorMessage></Wrapper>
+    return <Text>{error}</Text>
 };
 
 export default Error;

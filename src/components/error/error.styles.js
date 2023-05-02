@@ -1,14 +1,7 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    flex-direction: column;
-`;
-
-export const ErrorMessage = styled.h1`
+export const Text = styled.h1`
+    text-align: center;
     font-weight: bolder;
     font-size: 2.2em;
     color: rgb(204, 68, 68);
