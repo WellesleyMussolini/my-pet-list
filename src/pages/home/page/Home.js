@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useQuery } from "react-query";
 import { pet } from "../../../services/pet-service";
 import Input from "../../../components/input-search/Input";
@@ -17,7 +17,12 @@ const Home = () => {
     }, [pets, search]);
 
     if (!isLoading && !pets.length) {
-        return <Error error="NO PETS FOUND" />
+        return <Error
+            error="NO PETS FOUND"
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)" />
     }
     return (
         <Container>
