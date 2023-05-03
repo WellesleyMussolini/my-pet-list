@@ -7,8 +7,21 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const navigator = useNavigate();
+    const [scroll, setScroll] = React.useState(false);
+
+    React.useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        return currentScrollY > 0 ? setScroll(true) : setScroll(false);
+    };
     return (
-        <Container>
+        <Container scrollDown={scroll}>
             <Logo onClick={() => navigator("/")}>
                 <img src={Bone} alt="Bone" />
             </Logo>

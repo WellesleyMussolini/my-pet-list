@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,6 +10,9 @@ export const Container = styled.header`
     background: black;
     z-index: 10;
     width: 100%;
+    transition: all 0.3s;
+    opacity: ${(props) => (props.scrollDown ? "0.6" : "1")};
+
 `;
 
 export const Logo = styled.div`
