@@ -3,6 +3,7 @@ import Card from "../../../components/card/Card";
 import { usePetNavigate } from "../pet-navigate/pet.navigate";
 import { Container } from "./pet.styled";
 import { useSpring } from "react-spring";
+import Error from "../../../components/error/Error";
 
 const Pets = ({ pets }) => {
     const handleGetPetId = usePetNavigate();
@@ -11,6 +12,8 @@ const Pets = ({ pets }) => {
         from: { opacity: 0, transform: "translateY(20px)" },
         to: { opacity: 1, transform: "translateY(0px)" },
     });
+
+    if (pets.length === 0) return <Error message="NO PET FOUND" centered={false} />
     return (
         <Container style={startAnimation}>
             {
