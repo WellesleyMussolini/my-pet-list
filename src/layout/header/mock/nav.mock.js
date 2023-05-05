@@ -5,9 +5,9 @@ export const navigate = [
     // {
     //     label: "My Pets",
     // },
-    {
-        label: <PetsIcon />,
-    },
+    // {
+    //     label: <PetsIcon />,
+    // },
     // {
     //     label: "Pets"
     // },
