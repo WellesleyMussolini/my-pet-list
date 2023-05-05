@@ -7,12 +7,12 @@ import { useSpring } from "react-spring";
 const Pets = ({ pets }) => {
     const handleGetPetId = usePetNavigate();
 
-    const props = useSpring({
+    const startAnimation = useSpring({
         from: { opacity: 0, transform: "translateY(20px)" },
         to: { opacity: 1, transform: "translateY(0px)" },
     });
     return (
-        <Container style={props}>
+        <Container style={startAnimation}>
             {
                 pets.map((pet, index) => {
                     return (
