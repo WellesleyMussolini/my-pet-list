@@ -25,12 +25,7 @@ const Home = () => {
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
-            {
-                petsFilter.length > 0 ?
-                    <Pets pets={petsFilter} />
-                    :
-                    <Error message="NO PET FOUND" centered={false} />
-            }
+            <Pets pets={petsFilter} />
         </Container>
     );
 };
