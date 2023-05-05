@@ -1,20 +1,32 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100vh;
+    gap: 20px;
     background: #edf0f2;
-    height: 100vh;
+
+    & > div:first-child{
+        height: 100px;
+        margin-top: 80px;
+    }
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 
 export const LoadingCardScreen = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
-    margin: 100px 0;
-    height: 540px;
+    height: 700px;
 `;
