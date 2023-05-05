@@ -1,7 +1,14 @@
 import { Text } from "./error.styles";
 
-const Error = ({error, position, top, left, transform}) => {
-    return <Text style={{ position: position, top: top, left: left, transform: transform }}>{error}</Text>
+const Error = ({ message, centered }) => {
+    const styles = centered && {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
+    };
+
+    return <Text style={{ ...styles }}>{message}</Text>
 };
 
 export default Error;
