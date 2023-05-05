@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import * as Router from "../constants/routes";
 import Pet from '../pages/pet-details/page/Pet';
 import NotFound from '../components/not-found/NotFound';
-import Header from '../layout/header/header/Header';
+import Header from '../layout/header/Header';
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
