@@ -29,5 +29,4 @@ const Pets = ({ pets }) => {
     );
 };
 
-
 export default Pets;
