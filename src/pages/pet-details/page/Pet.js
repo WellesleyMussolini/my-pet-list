@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import LoadingScreen from "../../../components/loading/Loading";
+import Loading from "../../../components/loading/Loading";
 import { pet } from "../../../services/pet-service";
 import { Container, Title, Description } from "./pet.styles";
 import PetGallery from "../components/pet-gallery/PetGallery";
@@ -17,9 +17,7 @@ const Pet = () => {
         return;
     }, [id]);
 
-    if (!dog) {
-        return <LoadingScreen />
-    }
+    if (!dog) return <Loading />
 
     const description = paragraphs(dog.description)
     return (
