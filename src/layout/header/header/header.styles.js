@@ -7,7 +7,7 @@ export const Container = styled.header`
     justify-content: center;
     padding: 0 30px;
     height: 80px;
-    background: black;
+    background: rgb(8, 97, 170);
     z-index: 10;
     width: 100%;
     transition: all 0.3s;
