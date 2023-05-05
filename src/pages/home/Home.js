@@ -17,11 +17,11 @@ const Home = () => {
         return pet_filter(pets, search, "breed");
     }, [pets, search]);
 
+    if (error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />
+
     if (!isLoading && (!pets || !pets.length)) return <Error message="NO PETS FOUND" centered={true} />
 
     if (isLoading) return <LoadingScreen />
-
-    if (error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
