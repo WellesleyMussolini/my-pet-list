@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Container, Image } from "./pet.gallery.styles";
 
-const PetGallery = ({ images }) => {
+const PetGallery = ({ images, pet }) => {
     return (
         <Container>
             <Swiper
@@ -18,8 +18,8 @@ const PetGallery = ({ images }) => {
                 navigation={true}
                 modules={[Pagination, Navigation]}>
                 {images.map((image, index) => (
-                    <SwiperSlide>
-                        <Image key={index} src={image} alt={`Pet ${index}`} />
+                    <SwiperSlide key={index}>
+                        <Image src={image} alt={pet} />
                     </SwiperSlide>
                 ))}
             </Swiper>
