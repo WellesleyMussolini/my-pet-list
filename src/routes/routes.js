@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '../pages/home/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import * as Router from "../constants/routes";
-import Pet from '../pages/pet-details/page/Pet';
+import Pet from '../pages/pet-details/Pet';
 import NotFound from '../components/not-found/NotFound';
 import Header from '../layout/header/Header';
 import { QueryClient, QueryClientProvider } from 'react-query'
