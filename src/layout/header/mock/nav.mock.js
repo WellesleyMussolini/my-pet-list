@@ -1,14 +1,3 @@
+import Bone from "../img/bone.png";
 
-import PetsIcon from '@mui/icons-material/Pets';
-
-export const navigate = [
-    // {
-    //     label: "My Pets",
-    // },
-    // {
-    //     label: <PetsIcon />,
-    // },
-    // {
-    //     label: "Pets"
-    // },
-]
+export const navigate = [{ label: <img src={Bone} alt="Bone" />, route: "/" }];
