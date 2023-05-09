@@ -15,12 +15,17 @@ export const Wrapper = styled.div`
     cursor: pointer;
 `;
 
+export const Picture = styled.div`
+    width: 100%;
+    height: 239.2px;
+    overflow: hidden;
+`;
+
 export const Image = styled.div`
     background-image: url(${props => props.image});
     background-repeat: no-repeat;
     display: block;
-    width: 100%;
-    height: 239.2px;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     user-select: none;
@@ -28,6 +33,10 @@ export const Image = styled.div`
     object-fit: cover;
     /* object-fit: contain; */
     /* object-fit: fill; */
+    transition: 0.4s ease;
+    &:hover{
+        transform: scale(1.08);
+    }
 `;
 
 export const Breed = styled.h5`
