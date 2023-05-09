@@ -37,13 +37,28 @@ export const NavItem = styled.a`
         width: 0;
     };
 
-    &:hover::after{
+    &:hover::after {
         width: 100%;
         left: 0;
     }
+
+    /* ICONS */
+
+    & > img {
+        width: 45px;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+    }
+
+    & > img:hover {
+        transform: scale(1.2);
+    }
+
+    &:not(:hover) img {
+        filter: grayscale(100%);
+    }
+
+    &:has(img)::after {
+        display: none;
+    }
 `;
-
-/*
-
-
-*/
