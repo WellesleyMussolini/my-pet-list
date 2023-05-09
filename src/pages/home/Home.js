@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { pet } from "../../services/pet-service";
 import Input from "../../components/input-search/Input";
 import { Container } from "./home.styles";
-import { pet_filter } from "../../utils/pet.filter";
+import { petFilter } from "./utils/pet.filter";
 import LoadingScreen from "./components/loader/loader";
 import Error from "../../components/error/Error";
 import Pets from "../../layout/pets/pet-list/pet";
@@ -14,7 +14,7 @@ const Home = () => {
     const { isLoading, data: pets, error } = useQuery("pets", pet.get);
 
     const petsFilter = useMemo(() => {
-        return pet_filter(pets, search, "breed");
+        return petFilter(pets, search, "breed");
     }, [pets, search]);
 
     if (error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />
