@@ -13,7 +13,7 @@ const Pets = ({ pets }) => {
         to: { opacity: 1, transform: "translateY(0px)" },
     });
 
-    if (pets.length === 0) return <Error message="NO PET FOUND" centered={false} />
+    if (pets.length === 0) return <Error message="NO PET FOUND" color="rgba(0, 0, 0, 0.26)" centered={false} />
     return (
         <Container style={startAnimation}>
             {
