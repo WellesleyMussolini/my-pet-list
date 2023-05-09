@@ -11,7 +11,6 @@ export const NavList = styled.li`
     display: table-cell;
     position: relative;
     padding: 15px 0;
-    cursor: pointer;
 `;
 
 export const NavItem = styled.a`
@@ -21,8 +20,9 @@ export const NavItem = styled.a`
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
     position: relative;
+    cursor: pointer;
 
     &::after {
         background: none repeat scroll 0 0 transparent;
@@ -46,7 +46,6 @@ export const NavItem = styled.a`
 
     & > img {
         width: 45px;
-        cursor: pointer;
         transition: transform 0.4s ease;
     }
 
