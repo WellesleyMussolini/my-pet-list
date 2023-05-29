@@ -20,7 +20,7 @@ export const NavItem = styled.a`
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    /* padding: 15px 20px; */
+    padding: 15px 20px;
     position: relative;
     cursor: pointer;
 
@@ -55,6 +55,7 @@ export const NavItem = styled.a`
 
     &:not(:hover) img {
         filter: grayscale(100%);
+        transition: 1.5s ease;
     }
 
     &:has(img)::after {
