@@ -17,7 +17,7 @@ const Home = () => {
         return petFilter(pets, search, "breed");
     }, [pets, search]);
 
-    if (error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />
+    if (!Array.isArray(pets) || error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />
 
     if (isLoading) return <LoadingScreen />
     return (
