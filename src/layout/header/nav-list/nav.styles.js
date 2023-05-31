@@ -5,6 +5,7 @@ export const Navigation = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 100%;
 `;
 
 export const NavList = styled.li`
