@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Navigation = styled.div`
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 100%;
@@ -10,8 +10,17 @@ export const Navigation = styled.div`
 
 export const NavList = styled.li`
     display: table-cell;
-    position: relative;
+    /* position: relative; */
     padding: 15px 0;
+    &:first-child{
+        position: absolute;
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+    &:last-child{
+        position: absolute;
+        right: 0;
+    } 
 `;
 
 export const NavItem = styled.a`
