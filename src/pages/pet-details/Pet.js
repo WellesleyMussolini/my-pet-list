@@ -19,7 +19,7 @@ const Pet = () => {
 
     if (!dog) return <Loading />
 
-    const description = paragraphs(dog.description)
+    const description = paragraphs(dog.description);
     return (
         <Container>
             <Title>{dog.breed}</Title>
