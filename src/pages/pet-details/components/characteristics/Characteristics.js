@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { Container, Wrapper, TitleContainer, Characteristic, Information } from "./characteristics.styles";
 import PetsIcon from '@mui/icons-material/Pets';
+import { UseLanguage } from "../../../../context/languageContext";
 
 const Characteristics = ({ pet }) => {
+    const { language } = UseLanguage();
     const categories = [
-        { name: "FAMILY" },
-        { name: "PHYSICAL" },
-        { name: "SOCIAL" },
-        { name: "PERSONALITY" },
-        { name: "HEALTH" }
+        { key: "FAMILY", name: { en: "FAMILY", ptBr: "FAMÍLIA" } },
+        { key: "PHYSICAL", name: { en: "PHYSICAL", ptBr: "ATRIBUTOS FÍSICOS" } },
+        { key: "SOCIAL", name: { en: "SOCIAL", ptBr: "SOCIABILIDADE" } },
+        { key: "PERSONALITY", name: { en: "PERSONALITY", ptBr: "PERSONALIDADE" } },
+        { key: "HEALTH", name: { en: "HEALTH", ptBr: "SAÚDE" } }
     ];
+    const title = {en: "Breed Characteristics", ptBr: "Características da Raça"};
     return (
         <Container>
-            <h1>Breed Characteristics</h1>
+            <h1>{title[language.value]}</h1>
             {categories.map((category, index) => (
                 <Wrapper key={index}>
                     <TitleContainer>
-                        <h3>{category.name}</h3>
+                        <h3>{category.name[language.value]}</h3>
                     </TitleContainer>
-                    {pet[category.name].map((characteristic, index) => (
+                    {pet[language.value][category.key].map((characteristic, index) => (
                         <div key={index}>
                             <Characteristic>
                                 <p>{characteristic.characteristics}</p>
@@ -38,7 +41,7 @@ const Characteristics = ({ pet }) => {
                 </Wrapper>
             ))}
         </Container>
-    )
+    );
 };
 
 export default Characteristics;
