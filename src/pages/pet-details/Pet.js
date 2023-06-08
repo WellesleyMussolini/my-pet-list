@@ -7,11 +7,13 @@ import PetGallery from "./components/pet-gallery/PetGallery";
 import Characteristics from "./components/characteristics/Characteristics";
 import Overview from "./components/pet-overview/Overview";
 import { paragraphs } from "./utils/paragraphs";
+import { UseLanguage } from "../../context/languageContext";
 
 const Pet = () => {
     const { id } = useParams();
     const [dog, setDog] = useState(null);
-
+    const { language } = UseLanguage();
+    console.log(dog)
     useEffect(() => {
         pet.getById(id).then((data) => setDog(data));
         return;
@@ -19,7 +21,7 @@ const Pet = () => {
 
     if (!dog) return <Loading />
 
-    const description = paragraphs(dog.description);
+    const description = paragraphs(dog.description[language.value]);
     return (
         <Container>
             <Title>{dog.breed}</Title>
