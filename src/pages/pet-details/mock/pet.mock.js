@@ -5,22 +5,22 @@ import Scale from "../img/icon-breed-weight.svg";
 
 export const petStat = [
     {
-        stat: "Breed Group",
+        stat: {en: "Breed Group", ptBr: "Grupo"},
         icon: Dog,
         information: "breed_group",
     },
     {
-        stat: "Height",
+        stat: {en: "Size", ptBr: "Tamanho"},
         icon: Bone,
         information: "breed_size",
     },
     {
-        stat: "Weight",
+        stat: {en: "Weight", ptBr: "Peso"},
         icon: Scale,
         information: "weight",
     },
     {
-        stat: "Life Span",
+        stat: {en: "Life Span", ptBr: "Expectativa"},
         icon: Heart,
         information: "life_span"
     }
