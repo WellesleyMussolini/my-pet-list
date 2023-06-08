@@ -6,7 +6,7 @@ import Pet from '../pages/pet-details/Pet';
 import NotFound from '../components/not-found/NotFound';
 import Header from '../layout/header/Header';
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { LanguageContextProvider } from '../context';
+import { LanguageContextProvider } from '../context/languageContext';
 
 const queryClient = new QueryClient()
 
