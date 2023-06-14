@@ -8,23 +8,21 @@ import Header from '../layout/header/Header';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { LanguageContextProvider } from '../context/languageContext';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
-const Routers = () => {
-    return (
-        <BrowserRouter>
-            <QueryClientProvider client={queryClient}>
-                <LanguageContextProvider>
-                    <Header />
-                    <Routes>
-                        <Route exact path={Router.HOME} element={<Home />} />
-                        <Route path={Router.PET} element={<Pet />} />
-                        <Route path={Router.NOT_FOUND} element={<NotFound />} />
-                    </Routes>
-                </LanguageContextProvider>
-            </QueryClientProvider>
-        </BrowserRouter>
-    );
-};
+const Routers = () => (
+    <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+            <LanguageContextProvider>
+                <Header />
+                <Routes>
+                    <Route exact path={Router.HOME} element={<Home />} />
+                    <Route path={Router.PET} element={<Pet />} />
+                    <Route path={Router.NOT_FOUND} element={<NotFound />} />
+                </Routes>
+            </LanguageContextProvider>
+        </QueryClientProvider>
+    </BrowserRouter>
+);
 
 export default Routers;
