@@ -20,7 +20,6 @@ const Loading = () => {
         setTimeout(blink, 180);
     }
 
-
     // Right ear
 
     const [rightEarClass, setRightEarClass] = useState(styles.rightEar);
