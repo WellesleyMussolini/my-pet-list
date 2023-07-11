@@ -1,4 +1,3 @@
-/*
 import React, { useState, useRef } from "react";
 import { useEffect } from "react";
 import styles from "./loading.screen.module.css";
@@ -101,16 +100,5 @@ const Loading = () => {
         </div>
     );
 };
-
-export default Loading;
-*/
-
-const Loading = () => {
-    return(
-        <div>
-            LOADING...
-        </div>
-    )
-}
 
 export default Loading;
