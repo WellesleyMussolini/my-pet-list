@@ -19,9 +19,7 @@ const Home = () => {
 
     if (isLoading) return <LoadingScreen />;
 
-    if (!Array.isArray(pets) || !pets || error) {
-        return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />;
-    }
+    if (!Array.isArray(pets) || !pets || error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />;
     return (
         <Container>
             <Input handleSearch={(event) => setSearch(event.target.value)} />
