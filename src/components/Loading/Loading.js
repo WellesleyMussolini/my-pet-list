@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useEffect } from "react";
-import styles from "./loading.screen.module.css";
+import styles from "./loading.module.css";
 
 const Loading = () => {
     const [eyelidD, setEyelidD] = useState(
