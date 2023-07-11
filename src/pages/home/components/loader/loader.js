@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Wrapper, LoadingCards } from "./loader.styles";
-import Loading from "../../../../components/loading/Loading";
+// import Loading from "../../../../components/loading/Loading";
 import { cardSkeleton } from "../../utils/card-skeleton";
 import CardSkeleton from "../../../../components/card-skeleton/CardSkeleton";
 
@@ -13,7 +13,7 @@ const LoadingScreen = () => {
             <div></div>
             <Wrapper>
                 <LoadingCards>
-                    <Loading />
+                    {/* <Loading /> */}
                     {petSkeleton}
                 </LoadingCards>
             </Wrapper>
