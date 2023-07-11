@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Wrapper, TitleContainer, Characteristic, Information } from "./characteristics.styles";
-import PetsIcon from '@mui/icons-material/Pets';
 import { UseLanguage } from "../../../../context/languageContext";
+import { Accordion } from "../Accordion/Accordion";
 
 const Characteristics = ({ pet }) => {
     const { language } = UseLanguage();
@@ -23,19 +23,9 @@ const Characteristics = ({ pet }) => {
                     </TitleContainer>
                     {pet[language.value][category.key].map((characteristic, index) => (
                         <div key={index}>
-                            <Characteristic>
-                                <p>{characteristic.characteristics}</p>
-                                <div>
-                                    {
-                                        [...Array(5)].map((_, index) => (
-                                            <PetsIcon
-                                                key={index}
-                                                style={{ color: index < characteristic.points ? "rgb(36, 169, 251)" : "rgba(0, 0, 0, 0.26)" }}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            </Characteristic>
+                            <div>
+                                <Accordion title={characteristic.characteristics} information={characteristic.information}  points={characteristic.points}/>
+                            </div>
                         </div>
                     ))}
                 </Wrapper>
