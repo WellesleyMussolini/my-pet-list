@@ -19,7 +19,8 @@ const Pet = () => {
         return;
     }, [id]);
 
-    if (!dog) return <Loading />
+    // if (!dog) return <Loading />
+    if (!dog) return <p>Loading...</p>
 
     const description = paragraphs(dog.description[language.value]);
     return (
