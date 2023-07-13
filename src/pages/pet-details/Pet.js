@@ -22,7 +22,6 @@ const Pet = () => {
     if (!dog) return <Loading />
 
     const description = paragraphs(dog.description[language.value]);
-    
     return (
         <Container>
             <Title>{dog.breed}</Title>
