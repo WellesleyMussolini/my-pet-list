@@ -4,7 +4,7 @@ import { pet } from "../../services/pet-service";
 import Input from "../../components/input-search/Input";
 import { Container } from "./home.styles";
 import { petFilter } from "./utils/pet.filter";
-import LoadingScreen from "./components/loader/loader";
+import Loader from "./components/loader/loader.component";
 import Error from "../../components/error/Error";
 import Pets from "../../layout/pets/pet-list/pet";
 
@@ -17,7 +17,7 @@ const Home = () => {
         return petFilter(pets, search, "breed");
     }, [pets, search]);
 
-    if (isLoading) return <LoadingScreen />;
+    if (isLoading) return <Loader />;
 
     if (!Array.isArray(pets) || !pets || error) return <Error message="OPS... FAILED TO CONNECT TO API!" centered={true} />;
     return (
