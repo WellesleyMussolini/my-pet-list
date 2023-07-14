@@ -10,11 +10,10 @@ export const Container = styled.div`
     min-height: 100vh;
     gap: 20px;
     background: #edf0f2;
+`;
 
-    & > div:first-child{
-        height: 100px;
-        margin-top: 80px;
-    }
+export const Silhouette = styled.div`
+    height: 40px;
 `;
 
 export const Wrapper = styled.div`
