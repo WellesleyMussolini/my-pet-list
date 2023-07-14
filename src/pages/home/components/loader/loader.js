@@ -1,10 +1,8 @@
 import React from "react";
 import { Container, Wrapper, LoadingCards } from "./loader.styles";
-// import Loading from "../../../../components/loading/loading.component";
-
+import Loading from "../../../../layout/loading/loading.component";
 import { cardSkeleton } from "../../utils/card-skeleton";
 import CardSkeleton from "../../../../components/card-skeleton/CardSkeleton";
-import Loading from "../../../../layout/loading/Loading";
 
 const card_amount = 5;
 
