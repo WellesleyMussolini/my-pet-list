@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import Loading from "../../components/loading/loading.component";
+// import Loading from "../../components/loading/loading.component"; 
 import { pet } from "../../services/pet-service";
 import { Container, Title, Description } from "./pet.styles";
 import PetGallery from "./components/pet-gallery/PetGallery";
@@ -8,6 +8,7 @@ import Characteristics from "./components/characteristics/Characteristics";
 import Overview from "./components/pet-overview/Overview";
 import { paragraphs } from "./utils/paragraphs";
 import { UseLanguage } from "../../context/languageContext";
+import Loading from "../../layout/loading/Loading";
 
 const Pet = () => {
     const { id } = useParams();
