@@ -1,7 +1,7 @@
+import { Container, BoneIcon, Item } from "./header.styles";
 import React from "react";
-import { navigate } from "./mock/nav.mock";
-import { Navigate } from "./nav-list/nav.list";
-import { Container } from "./header.styles";
+import Bone from "./img/bone.png";
+import { Languages } from "./language/Languages";
 
 const Header = () => {
     const [scroll, setScroll] = React.useState(false);
@@ -19,7 +19,8 @@ const Header = () => {
     };
     return (
         <Container scrollDown={scroll}>
-            <Navigate navList={navigate} property="label" />
+            <BoneIcon src={Bone} alt="Bone" />
+            <Item><Languages /></Item>
         </Container>
     );
 };
