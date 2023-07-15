@@ -28,10 +28,6 @@ Please follow the established code style and conventions used in the project. Co
 
 Please note that by contributing to this project, you are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Be respectful and inclusive towards others, and maintain a positive and collaborative environment.
 
-## Licensing
-
-By contributing to this project, you agree that your contributions will be licensed under the same [MIT License](LICENSE) that covers the project.
-
 If you have any questions or need further clarification, feel free to reach out to the project maintainer(s) or refer to the [README.md](README.md) file for contact information.
 
 Thank you for your contribution!
