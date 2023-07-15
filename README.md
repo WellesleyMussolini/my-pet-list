@@ -7,10 +7,17 @@ Explore an extensive collection of breed profiles, highlighting characteristics,
 # DEMO
 <p><a href="https://my-pet-list-git-main-wellesleymussolini.vercel.app/">DEMO</a></p>
 
+# MIT License
 
-Replace `[License text]` with the actual license text or provide a reference to the LICENSE file in your project.
+This repository is licensed under the terms of the <a href="/LICENSE">MIT LICENSE</a>.
 
-Additionally, make sure to include a copy of the [LICENSE](LICENSE) file in your project.
+## License
+
+The MIT License is a permissive open-source license that allows you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software. It also grants you the freedom to use the software for any purpose, whether commercial or non-commercial, without having to pay any fees or royalties.
+
+## Usage
+
+If you choose to use this repository or the software contained within, please make sure to include the following license notice in your project:
 
 ## Disclaimer
 
