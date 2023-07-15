@@ -8,11 +8,7 @@ Check out the live demo [here](https://my-pet-list-git-main-wellesleymussolini.v
 
 ## License
 
-This repository is licensed under the terms of the [MIT License](LICENSE).
-
-If you choose to use this repository or the software contained within, please make sure to include the following license notice in your project:
-
-This repository provides the software "as is," without any warranties or guarantees of any kind. The authors or copyright holders shall not be liable for any claim, damages, or other liability arising from the use or distribution of the software.
+This repository is licensed under the terms of the [MIT License](LICENSE). Please refer to the <a href="/LICENSE">LICENSE</a> file for more details.
 
 ## Contributing
 
