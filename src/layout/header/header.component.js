@@ -2,9 +2,12 @@ import { Container, BoneIcon, Item } from "./header.styles";
 import React from "react";
 import Bone from "./img/bone.png";
 import { Languages } from "./language/Languages";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const [scroll, setScroll] = React.useState(false);
+
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -19,7 +22,7 @@ const Header = () => {
     };
     return (
         <Container scrollDown={scroll}>
-            <BoneIcon src={Bone} alt="Bone" />
+            <BoneIcon src={Bone} alt="Bone" onClick={() => navigate("/")} />
             <Item><Languages /></Item>
         </Container>
     );
