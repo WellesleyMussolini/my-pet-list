@@ -4,13 +4,13 @@ Explore an extensive collection of breed profiles, highlighting characteristics,
 
 ## Project Showcase
 
-<li>Dive into the live demo and interact with its features [here](https://my-pet-list-git-main-wellesleymussolini.vercel.app/).</li>
+Dive into the live demo and interact with its features [here](https://my-pet-list-git-main-wellesleymussolini.vercel.app/).
 
 ## Contributing
 
 Contributions are welcome! If you would like to contribute to this project, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-## LICENSE
+## License
 
 This repository is licensed under the terms of the [MIT License](LICENSE). Please refer to the <a href="/LICENSE">LICENSE</a> file for more details.
 
