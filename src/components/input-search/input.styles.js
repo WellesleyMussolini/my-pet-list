@@ -4,8 +4,12 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* Silhouette */
+    /* 
     height: 100px;
-    margin-top: 80px;
+    margin-top: 80px; 
+    */
 `;
 
 export const Wrapper = styled.div`
