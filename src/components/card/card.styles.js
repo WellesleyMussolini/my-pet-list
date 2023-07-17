@@ -1,64 +1,98 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    width: 280px;
-    height: 325px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.45) 1px 0px 5px 4px;
-    gap: 5px;
-    padding: 10px;
+    height: 325px;
+    width: 250px;
+    padding: 1.5rem;
     background: #fff;
-    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.45) 1px 0px 5px 1px;
+    
+    &:hover:before {
+        opacity: 1;
+    }; 
+
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0; 
+        /* border-radius: 15px; */
+        background: rgba(0, 0, 0, 0.6);
+        transition: 0.5s;
+        z-index: 2;
+    };
 `;
 
-export const Picture = styled.div`
+export const Image = styled.div`   
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
     width: 100%;
-    height: 239.2px;
-    overflow: hidden;
-`;
-
-export const Image = styled.div`
+    height: 100%;
     background-image: url(${props => props.image});
     background-repeat: no-repeat;
-    display: block;
-    height: 100%;
     background-size: cover;
     background-position: center center;
     user-select: none;
     touch-action: none;
-    object-fit: cover;
+    object-fit: cover; 
     /* object-fit: contain; */
     /* object-fit: fill; */
     transition: 0.4s ease;
+    overflow: hidden;
     &:hover{
         transform: scale(1.08);
+    };  
+`;
+
+export const Info = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+
+    ${Wrapper}:hover & {
+        opacity: 1;
+        transform: translateY(0px);
     }
-`;
+    
+    & > p{
+        letter-spacing: 1px;
+        font-size: 15px;
+        margin-top: 8px;
+    };
 
-export const Breed = styled.h5`
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.334;
-    letter-spacing: 0em;
-    text-align: center;
-    font-weight: bold;
-    /* color: #313131; */
-    color: #5a5959;
-    width: 220px;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-`;
-
-export const Id = styled.p`
-    width: 100%;
-    text-align: left;
-    color: rgb(171, 171, 171);
-    font-size: 12px;
-    cursor: auto;
+    & > button {
+        padding: 0.6rem;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        background: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.4s ease;
+        
+        &:hover {
+            background: dodgerblue;
+            color: white;
+        };
+    };
 `;
