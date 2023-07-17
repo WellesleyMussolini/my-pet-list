@@ -13,7 +13,8 @@ export const Container = styled.div`
 `;
 
 export const Silhouette = styled.div`
-    height: 40px;
+    height: 100px;
+    margin-top: 80px; 
 `;
 
 export const Wrapper = styled.div`
