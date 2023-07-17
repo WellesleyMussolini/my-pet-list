@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { pet } from "../../services/pet-service";
-import Input from "../../components/input-search/Input";
+import Input from "../../components/input-search/Input.component";
 import { Container } from "./home.styles";
 import { petFilter } from "./utils/pet.filter";
 import Loader from "./components/loader/loader.component";
-import Error from "../../components/error/Error";
-import Pets from "../../layout/pets/pet-list/pet";
+import Error from "../../components/error/error.component";
+import Pets from "../../layout/pets/pet-list/pets.component";
 
 const Home = () => {
     const [search, setSearch] = useState("");

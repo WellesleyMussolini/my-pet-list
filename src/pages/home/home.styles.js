@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center; 
     flex-direction: column;
     min-height: 100vh;
-    /* gap: 20px; */
+    gap: 20px;
+    width: 100%;
     font-size: 1rem; 
-    background: #edf0f2;
 `;
