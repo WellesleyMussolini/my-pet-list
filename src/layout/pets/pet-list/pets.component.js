@@ -1,12 +1,15 @@
 import React from "react";
-import Card from "../../../components/card/Card";
+import Card from "../../../components/card/card.component";
 import { usePetNavigate } from "../pet-navigate/pet.navigate";
-import { Container } from "./pet.styled";
+import { Container } from "./pets.styles";
 import { useSpring } from "react-spring";
-import Error from "../../../components/error/Error";
+import Error from "../../../components/error/error.component";
+import { breedName } from "../../../utils/breedName";
+import { UseLanguage } from "../../../context/languageContext";
 
 const Pets = ({ pets }) => {
-    const handleGetPetId = usePetNavigate();
+    const handleGetPetName = usePetNavigate();
+    const { language } = UseLanguage();
 
     const startAnimation = useSpring({
         from: { opacity: 0, transform: "translateY(20px)" },
@@ -18,13 +21,13 @@ const Pets = ({ pets }) => {
         <Container style={startAnimation}>
             {
                 pets.map((pet, index) => {
+                    const petName = breedName(pet, language.value);
                     return (
                         <Card
                             key={index}
                             image={pet.images.profile}
-                            id={pet._id}
-                            name={pet.breed}
-                            handle_pet_details={() => handleGetPetId(pet, "breed", "pet")}
+                            name={petName}
+                            handle_pet_details={() => handleGetPetName(pet, "breed", "pet")}
                         />
                     );
                 })}
