@@ -12,7 +12,7 @@ Contributions are welcome! If you would like to contribute to this project, plea
 
 ## License
 
-This repository is licensed under the terms of the [MIT License](LICENSE). Please refer to the <a href="/LICENSE">LICENSE</a> file for more details.
+This repository is licensed under the terms of the [MIT License](LICENSE). Please refer to the [License](/LICENSE) file for more details.
 
 ## Support
 
