@@ -1,7 +1,7 @@
 import React from "react";
 import { petStat } from "../../mock/pet.mock";
 import { Container, Icon, Info, Stats, Typography } from "./overview.styles";
-import { breed_average_weight } from "../../utils/average.weight";
+import { breed_average_weight } from "../../utils/formatted_weight";
 import { UseLanguage } from "../../../../context/languageContext"
 
 const Overview = ({ petList, maleWeight, femaleWeight }) => {
