@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../components/card/card.component";
-import { usePetNavigate } from "../pet-navigate/pet.navigate";
+import { usePetNavigate } from "../pet-navigate/pet_navigate";
 import { Container } from "./pets.styles";
 import { useSpring } from "react-spring";
 import Error from "../../../components/error/error.component";
