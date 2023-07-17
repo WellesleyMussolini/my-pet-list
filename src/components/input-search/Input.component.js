@@ -10,6 +10,6 @@ const Input = ({ handleSearch }) => {
             </Wrapper>
         </Container>
     )
-}
+};
 
 export default Input;

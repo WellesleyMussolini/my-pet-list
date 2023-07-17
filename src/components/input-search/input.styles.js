@@ -4,23 +4,32 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    width: 100%;
+
     /* Silhouette */
-    /* 
+
     height: 100px;
     margin-top: 80px; 
-    */
 `;
 
 export const Wrapper = styled.div`
+    @media (max-width: 1000px) {
+        width: 18em;    
+    };
+
+    @media (max-width: 300px) {
+        width: 12em;    
+    };
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: 40px;
-    z-index: 20;
-    width: 28em;
     background: #fff;
+    transition: 1s;
+    height: 40px;
+    width: 30%;
+    z-index: 20;
     border-radius: 0 10px 10px 0;
 
     & > svg {
