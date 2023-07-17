@@ -8,6 +8,6 @@ export const Text = styled.h1`
     color: ${props => props.color};
     font-size: 2.2em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 700px;
+    min-height: 715px;
     margin: 0;
 `;
