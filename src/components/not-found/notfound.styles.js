@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background: rgb(80, 5, 5);
     height: 100vh;
 `;
 
@@ -17,7 +16,7 @@ export const NotFounded = styled.div`
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
         font-weight: bolder;
         font-size: 50px;
-        color: #fff;
+        color: gray;
     }
 
     & > h2{
@@ -25,7 +24,7 @@ export const NotFounded = styled.div`
         font-weight: bolder;
         margin-top: 15px;  
         font-size: 25px;
-        color: #fff;
+        color: gray;
     }
 `;
 
