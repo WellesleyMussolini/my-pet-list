@@ -1,3 +1,4 @@
+import { Themes } from "../../themes/themes";
 import { Text } from "./error.styles";
 
 const Error = ({ message, centered, color }) => {
@@ -6,7 +7,7 @@ const Error = ({ message, centered, color }) => {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        color: "rgb(204, 68, 68)",
+        color: Themes.error.default,
     };
     return <Text color={color} style={{ ...styles }}>{message}</Text>
 };
