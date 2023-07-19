@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
 
-export const Container = styled(animated.div)`
+export const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
@@ -13,5 +12,20 @@ export const Container = styled(animated.div)`
 
     @media (max-width: 775px) {
         grid-template-columns: 1fr;
+    };
+
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fade-in 0.4s ease forwards;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        };
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        };
     };
 `;
