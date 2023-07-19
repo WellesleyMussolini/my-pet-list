@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Wrapper, LoadingCards, Silhouette } from "./loader.styles";
 import Loading from "../../../../components/loading/loading.component";
 import { cardSkeleton } from "../../utils/card-skeleton";
-import CardSkeleton from "../../../../components/card-skeleton/CardSkeleton";
+import CardSkeleton from "../../../../components/card-skeleton/cardskeleton.component";
 
 const card_amount = 5;
 
