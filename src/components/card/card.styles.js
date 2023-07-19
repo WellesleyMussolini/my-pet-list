@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Themes } from "../../themes/themes";
 
 export const Wrapper = styled.div`
     border-radius: 4px;
@@ -50,7 +51,7 @@ export const Image = styled.div`
     object-fit: cover; 
     /* object-fit: contain; */
     /* object-fit: fill; */
-    transition: 0.4s ease;
+    /* transition: 0.4s ease; */
     overflow: hidden;
     &:hover{
         transform: scale(1.08);
@@ -61,17 +62,18 @@ export const Info = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     z-index: 3;
     color: white;
     opacity: 0;
     transform: translateY(30px);
-    transition: 0.5s;
+    transition: 0.5s ease;
 
     ${Wrapper}:hover & {
         opacity: 1;
         transform: translateY(0px);
-    }
+        pointer-events: auto;
+    };
     
     & > p{
         letter-spacing: 1px;
@@ -80,19 +82,24 @@ export const Info = styled.div`
     };
 
     & > button {
-        padding: 0.6rem;
-        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        width: 100%;
+        border-radius: 7px;
         border: none;
-        border-radius: 3px;
-        background: white;
-        color: black;
-        font-weight: bold;
+        position: center;
+        outline: none;
+        transition: 0.5s ease; 
+        font-weight: bolder;
+        background: ${Themes.cancel};
+        color: ${Themes.darkgray};
         cursor: pointer;
-        transition: 0.4s ease;
         
         &:hover {
-            background: dodgerblue;
-            color: white;
+            background: ${Themes.primary.default};
+            color: ${Themes.white};
         };
     };
 `;
