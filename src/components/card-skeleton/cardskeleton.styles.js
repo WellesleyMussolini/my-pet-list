@@ -1,8 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 export const Card = styled.div`
-    width: 280px;
     height: 325px;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
