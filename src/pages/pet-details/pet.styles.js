@@ -21,10 +21,20 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.div`
-    width: 55em;
-    & > p {
-        margin-bottom: 35px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+
+    @media (min-width: 800px) {
+        width: 55em;
+    };
+
+    @media (max-width: 775px) {
+        width: 20em;
+    };
 `;
 
 export const Puppies = styled.div`
