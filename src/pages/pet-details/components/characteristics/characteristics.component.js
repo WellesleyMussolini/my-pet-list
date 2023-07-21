@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Container, Wrapper, TitleContainer, Characteristic, Information } from "./characteristics.styles";
+import { Container, Wrapper, TitleContainer } from "./characteristics.styles";
 import { UseLanguage } from "../../../../context/languageContext";
 import { Accordion } from "../Accordion/Accordion";
+import styled from "styled-components";
 
 const Characteristics = ({ pet }) => {
     const { language } = UseLanguage();
@@ -12,7 +13,7 @@ const Characteristics = ({ pet }) => {
         { key: "PERSONALITY", name: { en: "PERSONALITY", ptBr: "PERSONALIDADE" } },
         { key: "HEALTH", name: { en: "HEALTH", ptBr: "SAÚDE" } }
     ];
-    const title = {en: "Breed Characteristics", ptBr: "Características da Raça"};
+    const title = { en: "Breed Characteristics", ptBr: "Características da Raça" };
     return (
         <Container>
             <h1>{title[language.value]}</h1>
@@ -23,9 +24,7 @@ const Characteristics = ({ pet }) => {
                     </TitleContainer>
                     {pet[language.value][category.key].map((characteristic, index) => (
                         <div key={index}>
-                            <div>
-                                <Accordion title={characteristic.characteristics} information={characteristic.information}  points={characteristic.points}/>
-                            </div>
+                            <Accordion title={characteristic.characteristics} information={characteristic.information} points={characteristic.points} />
                         </div>
                     ))}
                 </Wrapper>

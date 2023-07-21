@@ -19,6 +19,9 @@ export const Wrapper = styled.div`
     margin-top: 30px;
     padding-bottom: 20px;
     background-color: #fff;
+    @media (max-width: 775px) {
+        width: 20em;
+    };
 `;
 
 export const TitleContainer = styled.div`
