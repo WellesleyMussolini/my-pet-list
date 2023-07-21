@@ -13,6 +13,7 @@ export const Container = styled(Accordion)`
     font-weight: 600;
     color: rgba(146, 146, 146);
 
+
     &.MuiAccordion-root {
         border: none;
         box-shadow: none;
@@ -25,8 +26,6 @@ export const SummaryWrapper = styled(AccordionSummary)`
     justify-content: center;
     align-items: center;
     width: 100%;
-    display: flex;
-  
     &:hover {
         background: rgb(36, 169, 251);
         transition: all 0.5s ease;
@@ -52,15 +51,45 @@ export const Summary = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0 40px;
+    
+    @media (min-width: 800px) {
+        padding: 0 40px;
+    };
+
+    @media (max-width: 775px) {
+        padding: 0 12px;
+    };
 `;
 
 export const Paws = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 775px) {
+        & > svg{
+            font-size: 18px;
+        }
+    };
+`;
+
+export const Title = styled(Typography)`
+    @media (max-width: 775px) {
+        &.MuiTypography-root{
+            font-size: 13px;
+        };
+    };
 `;
 
 export const Details = styled(Typography)`
-    padding: 0 40px;
+    @media (min-width: 800px) {
+        padding: 0 40px;
+    };
+
+    @media (max-width: 775px) {
+        padding: 0 12px;
+        &.MuiTypography-root{
+            font-size: 13px;
+        };
+    };
 `;

@@ -7,16 +7,14 @@ import {
     SummaryWrapper,
     Summary,
     Details, 
-    Paws 
+    Paws, 
+    Title
 } from './accordion.styles';
-
-import { Typography } from '@mui/material';
-
 export const Accordion = ({ title, points, information }) => (
     <Container>
         <SummaryWrapper expandIcon={<ExpandMoreIcon />}>
             <Summary>
-                <Typography>{title}</Typography>
+                <Title>{title}</Title>
                 <Paws>
                     {
 
