@@ -4,7 +4,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     width: 55em;
     height: 12em;
     gap: 120px;
@@ -13,6 +12,16 @@ export const Container = styled.div`
     -webkit-box-shadow: 1px 0px 13px 5px #bdbdbd;
     -moz-box-shadow: 1px 0px 13px 5px #bdbdbd;
     box-shadow: 1px 0px 13px 5px #bdbdbd;
+
+    @media (max-width: 1080px) {
+        flex-direction: row;
+    };
+
+    @media (max-width: 775px) {
+        flex-direction: column;
+        width: 10em;
+        height: 56em;
+    };
 `;
 
 export const Stats = styled.div`
@@ -45,4 +54,3 @@ export const Info = styled.p`
     font-family: "Quicksand",sans-serif;
     color: rgb(84, 84, 74);
 `;
-
