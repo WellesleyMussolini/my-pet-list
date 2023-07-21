@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Wrapper, TitleContainer } from "./characteristics.styles";
 import { UseLanguage } from "../../../../context/languageContext";
-import { Accordion } from "../Accordion/Accordion";
+import { Accordion } from "../Accordion/accordion.component";
 import styled from "styled-components";
 
 const Characteristics = ({ pet }) => {
