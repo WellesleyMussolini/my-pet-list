@@ -3,30 +3,39 @@ import styled from "styled-components";
 export const Container = styled.div`
     margin: 0 100%;
     cursor: grab;
+    /* width: 50em; */
+
     @media (min-width: 800px) {
-        width: 80em;
+        width: 58em;
     };
+    
+    /* @media (max-width: 800px) {
+        width: 40em;
+    }; */
 
     @media (max-width: 775px) {
         width: 22em;
     };
+
     & .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        
+        font-size: 18px;
+        background: transparent;
+        
         padding: 0 20px 60px 20px;
-    }
+    };
 
     .swiper {
         width: 100%;
-    }
+    };
 
     & .swiper:active {
         cursor: grabbing;
-    }
+    };
 `;
 
 export const Image = styled.img`
