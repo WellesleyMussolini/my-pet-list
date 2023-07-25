@@ -25,17 +25,36 @@ export const Description = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    gap: 20px;
 
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 20px;
+    };
 
     @media (min-width: 800px) {
+        padding: 40px;
+        font-size: 18px;
         width: 55em;
     };
 
     @media (max-width: 775px) {
-        width: 20em;
-    };
+        width: 90%;
+        max-width: 20em;
+        font-size: 14px;
+    }; 
 `;
+
 
 export const Puppies = styled.div`
     width: 1000px;
