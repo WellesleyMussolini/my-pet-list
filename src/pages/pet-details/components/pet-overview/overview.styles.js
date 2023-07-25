@@ -9,9 +9,7 @@ export const Container = styled.div`
     gap: 120px;
     background: #fff;
     border-radius: 12px;
-    -webkit-box-shadow: 1px 0px 13px 5px #bdbdbd;
-    -moz-box-shadow: 1px 0px 13px 5px #bdbdbd;
-    box-shadow: 1px 0px 13px 5px #bdbdbd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 1080px) {
         flex-direction: row;

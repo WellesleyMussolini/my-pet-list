@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh;
-    gap: 20px;
     background: #edf0f2;
 `;
 
