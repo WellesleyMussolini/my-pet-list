@@ -6,6 +6,10 @@ Explore an extensive collection of breed profiles, highlighting characteristics,
 
 Dive into the live demo and interact with its features [here](https://my-pet-list-git-main-wellesleymussolini.vercel.app/).
 
+## BackEnd CodeBase
+
+For those who want to dig deeper to access the backend repository for the **Pet List** project, please visit [here](https://github.com/WellesleyMussolini/pets-api).
+
 ## Contributing
 
 Contributions are welcome! If you would like to contribute to this project, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
