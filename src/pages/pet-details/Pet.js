@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import Loading from "../../components/loading/loading.component"; 
 import { pet } from "../../services/pet-service";
 import { Container, Title, Description } from "./pet.styles";
 import PetGallery from "./components/pet-gallery/gallery.component";
@@ -9,6 +8,7 @@ import Overview from "./components/pet-overview/Overview";
 import { paragraphs } from "./utils/paragraphs";
 import { UseLanguage } from "../../context/languageContext";
 import { breedName } from "../../utils/breedName";
+import DogWagTail from "../../layout/dog-wag-tail/dog_wag_tail.layout";
 
 const Pet = () => {
     const { id } = useParams();
@@ -19,7 +19,7 @@ const Pet = () => {
         return;
     }, [id]);
 
-    if (!dog) return <Loading />
+    if (!dog) return <DogWagTail />;
 
     const description = paragraphs(dog.description[language.value]);
     const petName = breedName(dog, language.value);
