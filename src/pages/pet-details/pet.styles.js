@@ -6,11 +6,12 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    /* background: #f4f4f4; */
     background: #EFEFEF;
     overflow: hidden;
     padding: 110px 0;
-    gap: 25px;
+    gap: 50px;
+
+    /* background: #f4f4f4; */
 `;
 
 export const Title = styled.h1`
@@ -18,9 +19,12 @@ export const Title = styled.h1`
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: gray;
+    margin: 0 !important;
 `;
 
 export const Description = styled.div`
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,27 +34,30 @@ export const Description = styled.div`
     margin: 0 auto;
     padding: 20px;
     background: #fff;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    gap: 20px;
+    gap: 20px; 
 
     p {
-        font-size: 16px;
         line-height: 1.6;
         color: #333;
         margin-bottom: 20px;
     };
 
     @media (min-width: 800px) {
-        padding: 40px;
-        font-size: 18px;
+        /* padding: 40px; */
+        font-size: 16px;
         width: 55em;
     };
 
-    @media (max-width: 775px) {
+    /* @media (max-width: 775px) {
         width: 90%;
         max-width: 20em;
+        font-size: 14px;
+    };  */
+
+    @media (max-width: 400px) {
+        /* width: 85%; */
         font-size: 14px;
     }; 
 `;

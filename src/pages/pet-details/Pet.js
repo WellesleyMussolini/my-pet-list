@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from 'react-router-dom';
 import { pet } from "../../services/pet-service";
 import { Container, Title, Description } from "./pet.styles";
@@ -12,12 +12,9 @@ import DogWagTail from "../../layout/dog-wag-tail/dog_wag_tail.layout";
 
 const Pet = () => {
     const { id } = useParams();
-    const [dog, setDog] = useState(null);
+    const [dog, setDog] = React.useState(null);
     const { language } = UseLanguage();
-    useEffect(() => {
-        pet.getById(id).then((data) => setDog(data));
-        return;
-    }, [id]);
+    React.useEffect(() => { pet.getById(id).then((data) => setDog(data)) }, [id]);
 
     if (!dog) return <DogWagTail />;
 
@@ -29,9 +26,9 @@ const Pet = () => {
             <Description>{description}</Description>
             <Overview petList={dog} maleWeight={dog.weight.male} femaleWeight={dog.weight.female} />
             <Characteristics pet={dog.breed_characteristics} />
-            <Title>PUPPIES</Title>
+            <Title>{language.value === "en" ? "PUPPIES" : "FILHOTES"}</Title>
             <PetGallery images={dog.images.puppies} />
-            <Title>GROWN</Title>
+            <Title>{language.value === "en" ? "GROWN" : "ADULTO"}</Title>
             <PetGallery images={dog.images.gallery} pet={dog.breed} />
         </Container>
     );
