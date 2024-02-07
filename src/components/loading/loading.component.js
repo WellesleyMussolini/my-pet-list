@@ -6,19 +6,16 @@ const Loading = () => {
     const [eyelidD, setEyelidD] = useState(
         "M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z"
     );
-    const [eyelidClass, setEyelidClass] = useState("");
 
     const blink = () => {
         setTimeout(() => {
             setEyelidD("M85.89 68.876l24.72-16.19 17.96 27.423-24.72 16.188z");
-            setEyelidClass("blink");
             setTimeout(endBlink, 180);
         }, 3000);
     };
 
     const endBlink = () => {
         setEyelidD("M85.88 68.878l24.722-16.19 1.802 2.754-24.72 16.19z");
-        setEyelidClass("");
         setTimeout(blink, 180);
     };
 
@@ -78,7 +75,10 @@ const Loading = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 207.95 211.52"
                 >
-                    <defs>
+
+
+                    {/* SOMEHOW THESE LINES OF CODE BELLOW CHANGES THE BACKGROUND COLOR OF THE LOADING SCREEN WHEN CHANGED THE LANGUAGE */}
+                    {/* <defs>
                         <radialGradient
                             id="a"
                             cx="100.23"
@@ -94,7 +94,11 @@ const Loading = () => {
                             <stop offset=".96" stopColor="#99b4bb" />
                             <stop offset="1" stopColor="#90a9af" />
                         </radialGradient>
-                    </defs>
+                    </defs> */}
+                    {/* SOMEHOW THESE LINES OF CODE ABOVE CHANGES THE BACKGROUND COLOR OF THE LOADING SCREEN WHEN CHANGED THE LANGUAGE */}
+
+
+
                     <title>Loading...</title>
                     <circle cx="100" cy="111.52" r="100" fill="url(#a)" />
                     <path
@@ -129,7 +133,7 @@ const Loading = () => {
                         fillRule="evenodd"
                         d="M123.36 143.82l-66.62-22.91-5.14 16.33 68.33 24.02 3.43-17.44"
                     />
-                    <Eyelid className={eyelidClass} fill="#010101" d={eyelidD} />
+                    <Eyelid fill="#010101" d={eyelidD} />
                 </Dog>
             </Loader>
         </Container>
