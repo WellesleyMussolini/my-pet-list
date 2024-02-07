@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Wrapper, TitleContainer } from "./characteristics.styles";
 import { UseLanguage } from "../../../../context/languageContext";
 import { Accordion } from "../Accordion/accordion.component";
-import styled from "styled-components";
 
 const Characteristics = ({ pet }) => {
     const { language } = UseLanguage();
@@ -19,9 +18,7 @@ const Characteristics = ({ pet }) => {
             <h1>{title[language.value]}</h1>
             {categories.map((category, index) => (
                 <Wrapper key={index}>
-                    <TitleContainer>
-                        <h3>{category.name[language.value]}</h3>
-                    </TitleContainer>
+                    <TitleContainer><h3>{category.name[language.value]}</h3></TitleContainer>
                     {pet[language.value][category.key].map((characteristic, index) => (
                         <div key={index}>
                             <Accordion title={characteristic.characteristics} information={characteristic.information} points={characteristic.points} />
