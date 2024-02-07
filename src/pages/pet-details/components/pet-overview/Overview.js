@@ -10,21 +10,20 @@ const Overview = ({ petList, maleWeight, femaleWeight }) => {
     return (
         <Container>
             {
-                petStat.map((pet, index) => {
-                    return (
-                        <Stats key={index}>
-                            <Icon image={pet.icon} />
-                            <Typography color="rgb(0, 131, 212)">{pet.stat[language.value]}</Typography>
-                            {
-                                pet.information === "weight" ? (
-                                    <Info>{combinedWeight}</Info>
-                                ) : (
-                                    <Info>{pet.information.split(".").reduce((object, index) => object[index][language.value], petList)}</Info>
-                                )
-                            }
-                        </Stats>
-                    )
-                })
+                petStat.map((pet, index) => (
+                    <Stats key={index}>
+                        <Icon image={pet.icon} />
+                        <Typography color="rgb(0, 131, 212)">{pet.stat[language.value]}</Typography>
+                        {
+                            pet.information === "weight" ? (
+                                <Info>{combinedWeight}</Info>
+                            ) : (
+                                <Info>{pet.information.split(".").reduce((object, index) => object[index][language.value], petList)}</Info>
+                            )
+                        }
+                    </Stats>
+                )
+                )
             }
         </Container>
     )

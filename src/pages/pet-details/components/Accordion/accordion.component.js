@@ -2,19 +2,20 @@ import * as React from 'react';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PetsIcon from '@mui/icons-material/Pets';
-import { 
-    Container, 
+import { Typography } from '@mui/material';
+import {
+    Container,
     SummaryWrapper,
     Summary,
-    Details, 
-    Paws, 
-    Title
+    Details,
+    Paws,
 } from './accordion.styles';
+
 export const Accordion = ({ title, points, information }) => (
     <Container>
         <SummaryWrapper expandIcon={<ExpandMoreIcon />}>
             <Summary>
-                <Title>{title}</Title>
+                <Typography>{title}</Typography>
                 <Paws>
                     {
 
@@ -29,9 +30,7 @@ export const Accordion = ({ title, points, information }) => (
             </Summary>
         </SummaryWrapper>
         <AccordionDetails>
-            <Details>
-                {information}
-            </Details>
+            <Typography>{information}</Typography>
         </AccordionDetails>
     </Container>
 );
